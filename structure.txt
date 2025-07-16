@@ -1,0 +1,32 @@
+RD_F/
+│
+├── index.html                  ← Main landing page
+├── about.html                 ← (Optional) Detailed about page
+├── contact.html               ← (Optional) Full contact form page
+│
+├── /assets/
+│   ├── /images/
+│   │   ├── logo.png            ← Your logo
+│   │   ├── banner1.jpg         ← Posters/Banners
+│   │   ├── banner2.jpg
+│   │   ├── ...
+│   │
+│   └── /icons/
+│       └── favicon.ico         ← Optional
+│
+├── /css/
+│   ├── style.css               ← Custom styles (if needed)
+│   ├── normalize.css           ← Reset/normalize CSS
+│   └── libraries.css           ← AOS, Animate.css, Hover.css etc.
+│
+├── /js/
+│   ├── main.js                 ← Typed.js, form scripts, etc.
+│   ├── aos.js                  ← AOS animations init
+│   ├── form-validation.js      ← JustValidate / Parsley / Notyf
+│   ├── libraries.js            ← Optional: JS loaders (Typed, Micromodal, etc.)
+│
+├── /fonts/                     ← Optional custom fonts
+│
+├── /docs/                      ← For documentation or extra pages
+│
+└── README.md                   ← Project info (for GitHub or reference)
