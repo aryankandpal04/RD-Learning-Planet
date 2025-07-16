@@ -1,32 +1,32 @@
-RD_F/
+rd-learning-planet/
 │
-├── index.html                  ← Main landing page
-├── about.html                 ← (Optional) Detailed about page
-├── contact.html               ← (Optional) Full contact form page
+├── index.html             ← Landing (Home) Page
+├── about.html             ← About the Coaching & Founder
+├── courses.html           ← Subjects, Entrance Prep, Extra Services
+├── stationary.html        ← RD Stationary section
+├── contact.html           ← Contact + Enquiry Form
 │
 ├── /assets/
-│   ├── /images/
-│   │   ├── logo.png            ← Your logo
-│   │   ├── banner1.jpg         ← Posters/Banners
-│   │   ├── banner2.jpg
-│   │   ├── ...
-│   │
+│   ├── /images/           ← Logo, banners, gallery, faculty images
 │   └── /icons/
-│       └── favicon.ico         ← Optional
+│       └── favicon.ico    ← Optional
 │
 ├── /css/
-│   ├── style.css               ← Custom styles (if needed)
-│   ├── normalize.css           ← Reset/normalize CSS
-│   └── libraries.css           ← AOS, Animate.css, Hover.css etc.
+│   ├── main.css           ← Custom styles (if any)
+│   ├── style.css          ← Custom styles (legacy/optional)
+│   ├── normalize.css      ← Reset/normalize CSS
+│   └── libraries.css      ← Imported: Tailwind, Bootstrap, AOS, etc.
 │
 ├── /js/
-│   ├── main.js                 ← Typed.js, form scripts, etc.
-│   ├── aos.js                  ← AOS animations init
-│   ├── form-validation.js      ← JustValidate / Parsley / Notyf
-│   ├── libraries.js            ← Optional: JS loaders (Typed, Micromodal, etc.)
+│   ├── main.js            ← Typed.js, animations, modals
+│   ├── validation.js      ← JustValidate/Parsley + Notyf
+│   ├── animations.js      ← AOS, GSAP, Anime.js
+│   ├── aos.js             ← AOS animations init (legacy/optional)
+│   ├── form-validation.js ← Form validation scripts (legacy/optional)
+│   ├── libraries.js       ← JS loaders/libraries (legacy/optional)
 │
-├── /fonts/                     ← Optional custom fonts
+├── /fonts/                ← Optional custom fonts
 │
-├── /docs/                      ← For documentation or extra pages
+├── /docs/                 ← For documentation or extra pages
 │
-└── README.md                   ← Project info (for GitHub or reference)
+└── README.md              ← Website usage info
