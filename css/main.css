@@ -1,0 +1,111 @@
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+section, .section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.card, .bg-white, .bg-[#1e293b], .bg-[#0f172a] {
+  border-radius: 1rem !important;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+}
+
+button, .btn, input[type="submit"] {
+  border-radius: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+  border: none;
+}
+
+input, textarea, select {
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  padding: 0.5em 1em;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #22d3ee;
+  outline: 2px solid #22d3ee;
+}
+
+.bg-white {
+  color: #0f172a !important;
+}
+
+.bg-yellow-400, .bg-yellow-500 {
+  color: #222 !important;
+}
+
+.text-cyan-300 {
+  color: #22d3ee !important;
+}
+
+.text-orange-400 {
+  color: #f97316 !important;
+}
+
+.text-black {
+  color: #222 !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.shadow, .shadow-lg {
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08) !important;
+}
+
+/* Utility: Hide scrollbars for carousels, etc. */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  section, .section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
