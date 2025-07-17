@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About – RD Learning Planet</title>
-
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- AOS CSS -->
@@ -19,132 +18,63 @@
   <link rel="stylesheet" href="css/main.css">
   <style>body { font-family: 'Poppins', sans-serif; }</style>
 </head>
-<body class="bg-[#0f172a] text-white">
-  <!-- Right-side Vertical Semi-Circle Menu -->
-  <div id="semicircle-menu-container" class="fixed top-1/2 right-0 z-50 flex flex-col items-end" style="transform: translateY(-50%);">
-    <!-- Semi-circle with MENU text -->
-    <button id="semicircle-menu-btn" class="relative w-28 h-32 bg-cyan-400 rounded-l-full flex items-center justify-center shadow-lg border-4 border-cyan-300 focus:outline-none transition hover:bg-cyan-300" aria-label="Open Menu">
-      <span id="menu-label" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#0f172a] font-extrabold text-xl tracking-widest transition-all duration-200">MENU</span>
-    </button>
-    <!-- Nav Links (hidden by default) -->
-    <ul id="semicircle-nav" class="pointer-events-none opacity-0 transition-all duration-300 ease-in-out flex flex-col gap-4 absolute top-1/2 right-28 -translate-y-1/2">
-      <li><a href="index.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-cyan-400 text-[#0f172a] shadow-lg border-2 border-cyan-300 font-bold transition" title="Home"><i class="fas fa-home text-2xl" aria-hidden="true"></i></a></li>
-      <li><a href="about.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-[#1e293b] text-cyan-300 shadow-lg border-2 border-cyan-300 hover:bg-cyan-400 hover:text-[#0f172a] transition" title="About"><i class="fas fa-user-graduate text-2xl" aria-hidden="true"></i></a></li>
-      <li><a href="courses.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-[#1e293b] text-cyan-300 shadow-lg border-2 border-cyan-300 hover:bg-cyan-400 hover:text-[#0f172a] transition" title="Courses"><i class="fas fa-book-open text-2xl" aria-hidden="true"></i></a></li>
-      <li><a href="stationary.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-[#1e293b] text-cyan-300 shadow-lg border-2 border-cyan-300 hover:bg-cyan-400 hover:text-[#0f172a] transition" title="Stationary"><i class="fas fa-pencil-ruler text-2xl" aria-hidden="true"></i></a></li>
-      <li><a href="contact.html" class="flex items-center justify-center w-14 h-14 rounded-full bg-[#1e293b] text-cyan-300 shadow-lg border-2 border-cyan-300 hover:bg-cyan-400 hover:text-[#0f172a] transition" title="Contact"><i class="fas fa-envelope text-2xl" aria-hidden="true"></i></a></li>
-    </ul>
-  </div>
-  <style>
-    #semicircle-menu-btn {
-      border-top-right-radius: 100px 80px;
-      border-bottom-right-radius: 100px 80px;
-      border-left: none;
-      min-width: 112px;
-      min-height: 128px;
-      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
-      transition: background 0.2s, box-shadow 0.2s;
-    }
-    #semicircle-menu-btn.open, #semicircle-menu-btn:active {
-      background: #f97316 !important;
-      box-shadow: 0 4px 24px 0 rgba(249,115,22,0.15);
-    }
-    #semicircle-menu-btn:hover #menu-label,
-    #semicircle-menu-btn:focus #menu-label {
-      color: #0f172a !important;
-      text-decoration: none !important;
-      letter-spacing: 0.2em !important;
-    }
-    #menu-label.open {
-      color: #0f172a !important;
-      text-decoration: none !important;
-      letter-spacing: 0.2em !important;
-    }
-    #menu-label {
-      color: #0f172a;
-      text-decoration: none;
-      letter-spacing: 0.2em;
-    }
-    #semicircle-nav.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    @media (max-width: 1023px) {
-      #semicircle-menu-container { display: none !important; }
-    }
-  </style>
-  <script>
-    const semicircleMenuBtn = document.getElementById('semicircle-menu-btn');
-    const semicircleNav = document.getElementById('semicircle-nav');
-    const menuLabel = document.getElementById('menu-label');
-    let semiOpen = false;
-    semicircleMenuBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      semiOpen = !semiOpen;
-      semicircleNav.classList.toggle('open', semiOpen);
-      semicircleNav.classList.toggle('opacity-0', !semiOpen);
-      semicircleNav.classList.toggle('pointer-events-none', !semiOpen);
-      semicircleMenuBtn.classList.toggle('open', semiOpen);
-      menuLabel.classList.toggle('open', semiOpen);
-    });
-    document.addEventListener('click', (e) => {
-      if (semiOpen && !semicircleMenuBtn.contains(e.target) && !semicircleNav.contains(e.target)) {
-        semiOpen = false;
-        semicircleNav.classList.remove('open');
-        semicircleNav.classList.add('opacity-0', 'pointer-events-none');
-        semicircleMenuBtn.classList.remove('open');
-        menuLabel.classList.remove('open');
-      }
-    });
-  </script>
-  <div class="h-16"></div>
-  <!-- Hero Banner -->
-  <section class="flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b] mb-12" id="hero">
-    <div class="max-w-lg w-full flex flex-col items-center">
-      <img src="assets/images/logo.jpg" alt="RD Learning Planet Logo" class="mx-auto w-32 h-32 md:w-40 md:h-40 mb-6 rounded-full border-4 border-cyan-300 shadow-lg object-cover animate__animated animate__fadeInDown" />
-      <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-300 animate__animated animate__fadeInUp text-center w-full">About RD Learning Planet</h1>
-      <p class="text-orange-400 italic mt-2 animate__animated animate__fadeInUp animate__delay-1s">"A great place for your success."</p>
-    </div>
-  </section>
-
+<body class="bg-[#0f172a] text-white overflow-x-hidden">
   <!-- Announcement Bar -->
-  <div class="bg-yellow-400 text-black py-2 text-center text-base md:text-lg font-semibold animate__animated animate__fadeIn mb-12 overflow-hidden relative" data-aos="fade-down">
+  <div class="announcement-bar bg-yellow-400 text-black py-2 text-center text-sm sm:text-base md:text-lg font-semibold animate__animated animate__fadeIn overflow-hidden relative" data-aos="fade-down">
     <div class="announcement-marquee whitespace-nowrap inline-block" style="will-change: transform;">
       📞 8938848457 | CBSE & UK Boards | Hindi & English Medium
     </div>
   </div>
-
+  <!-- Sunburst Half-Circle Menu (Right-Center, Polished) -->
+  <div class="sunburst-menu-container" tabindex="-1" aria-label="Main Navigation">
+    <button class="sunburst-menu-button" id="sunburstMenuBtn" aria-label="Open Menu" tabindex="0">
+      <span class="sunburst-menu-label desktop-menu-label">MENU</span>
+      <span class="sunburst-menu-label mobile-menu-label" style="display:none;">M<br>E<br>N<br>U</span>
+    </button>
+    <a href="index.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">🏠</span><span class="label">Home</span></a>
+    <a href="about.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">📄</span><span class="label">About</span></a>
+    <a href="courses.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">📚</span><span class="label">Courses</span></a>
+    <a href="stationary.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">🛒</span><span class="label">Store</span></a>
+    <a href="contact.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">📞</span><span class="label">Contact</span></a>
+    <a href="#settings" class="sunburst-menu-item" tabindex="-1"><span class="icon">⚙️</span><span class="label">Settings</span></a>
+  </div>
+  <script src="js/menu.js"></script>
+  <!-- Hero Banner -->
+  <section class="flex flex-col items-center justify-center py-8 px-4 md:py-16 md:px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b] mb-6 md:mb-12" id="hero">
+    <div class="max-w-md md:max-w-lg w-full flex flex-col items-center">
+      <img src="assets/images/logo.jpg" alt="RD Learning Planet Logo" class="mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 sm:mb-6 rounded-full border-4 border-cyan-300 shadow-lg object-cover animate__animated animate__fadeInDown" />
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-cyan-300 animate__animated animate__fadeInUp text-center">About RD Learning Planet</h1>
+      <p class="text-orange-400 italic mt-2 animate__animated animate__fadeInUp animate__delay-1s text-center text-sm sm:text-base">"A great place for your success."</p>
+    </div>
+  </section>
   <!-- About Section -->
-  <section class="py-10 px-4 max-w-4xl mx-auto mb-12" data-aos="fade-up">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-cyan-300 text-center">Our Mission & Vision</h2>
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-cyan-300 text-center">Our Mission & Vision</h2>
       <p class="text-lg text-center max-w-2xl mx-auto">Empowering students from Class 1 to 12, BCA, B.Sc IT/CS, and competitive exams with quality education, personal attention, and a nurturing environment.</p>
     </div>
   </section>
-
   <!-- Founder Profile -->
-  <section class="py-8 px-4 max-w-3xl mx-auto mb-12" data-aos="fade-right">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-8">
-      <img src="assets/images/logo.jpg" alt="Mr. Deepak Pandey" class="w-32 h-32 rounded-full border-4 border-cyan-300 shadow-md object-cover mb-4 md:mb-0" />
+  <section class="py-6 px-4 md:py-10 md:px-6 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-right">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8 flex flex-col md:flex-row items-center gap-8">
+      <img src="assets/images/logo.jpg" alt="Mr. Deepak Pandey" class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full border-4 border-cyan-300 shadow-md object-cover mb-4 md:mb-0" />
       <div>
-        <h2 class="text-2xl font-bold mb-2 text-cyan-300">Mr. Deepak Pandey <span class="text-lg font-semibold text-white">(Founder)</span></h2>
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-cyan-300">Mr. Deepak Pandey <span class="text-lg font-semibold text-white">(Founder)</span></h2>
         <p class="mb-2">Maths & Science Teacher | 10+ years experience</p>
         <p class="text-sm text-gray-300">Mr. Pandey is passionate about making learning accessible and enjoyable for every student. His teaching philosophy centers on clarity, patience, and real-world application.</p>
       </div>
     </div>
   </section>
-
   <!-- Founder's Message -->
-  <section class="py-8 px-4 max-w-3xl mx-auto mb-12" data-aos="fade-left">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8">
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-left">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
       <h3 class="text-xl font-bold mb-4 text-center text-cyan-300">Founder's Message</h3>
       <p class="text-lg text-center max-w-2xl mx-auto">Dear Students & Parents,<br>At RD Learning Planet, we believe every child has unique potential. Our goal is to nurture curiosity, build confidence, and inspire a lifelong love for learning. Thank you for trusting us with your educational journey.<br><span class="text-orange-400 font-semibold">– Mr. Deepak Pandey</span></p>
     </div>
   </section>
-
   <!-- Teaching Philosophy -->
-  <section class="py-8 px-4 max-w-4xl mx-auto mb-12" data-aos="fade-up">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8">
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
       <h3 class="text-xl font-bold mb-6 text-center text-cyan-300">Our Teaching Philosophy</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="flex flex-col items-center">
@@ -165,10 +95,9 @@
       </div>
     </div>
   </section>
-
   <!-- Milestones & Achievements -->
-  <section class="py-8 px-4 max-w-5xl mx-auto mb-12" data-aos="fade-right">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8">
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-right">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
       <h3 class="text-xl font-bold mb-6 text-center text-cyan-300">Milestones & Achievements</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
         <div>
@@ -186,10 +115,9 @@
       </div>
     </div>
   </section>
-
   <!-- Faculty List -->
-  <section class="py-8 px-4 max-w-4xl mx-auto mb-12" data-aos="fade-up">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8">
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
       <h3 class="text-xl font-bold mb-6 text-center text-cyan-300">Our Faculty</h3>
       <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
         <div class="flex flex-col items-center">
@@ -210,10 +138,9 @@
       </div>
     </div>
   </section>
-
   <!-- Centers Info -->
-  <section class="py-8 px-4 max-w-3xl mx-auto mb-12" data-aos="fade-left">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8">
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-left">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
       <h3 class="text-xl font-bold mb-4 text-center text-cyan-300">Our Centers</h3>
       <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
         <div class="flex flex-col items-center">
@@ -229,18 +156,16 @@
       </div>
     </div>
   </section>
-
   <!-- Testimonials (Optional) -->
-  <section class="py-8 px-4 max-w-3xl mx-auto mb-12" data-aos="fade-up">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8">
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
       <h3 class="text-xl font-bold mb-4 text-center text-orange-400">Testimonials <span class="text-sm text-gray-400">(Coming Soon)</span></h3>
       <p class="text-center text-gray-400">Student and parent reviews will be showcased here.</p>
     </div>
   </section>
-
   <!-- Gallery Section -->
-  <section class="py-8 px-4 max-w-5xl mx-auto mb-12" data-aos="fade-up">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8">
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
       <h3 class="text-xl font-bold mb-6 text-center text-cyan-300">Gallery</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <img src="assets/images/banner1.jpg" alt="Gallery Image 1" class="gallery-img rounded-xl shadow object-cover w-full h-48 cursor-pointer" loading="lazy" tabindex="0" />
@@ -251,82 +176,10 @@
       </div>
     </div>
   </section>
-
-  <!-- Lightbox Modal -->
-  <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
-    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl font-bold focus:outline-none" aria-label="Close Gallery">&times;</button>
-    <img id="lightbox-img" src="" alt="Full Gallery Image" class="max-h-[80vh] max-w-[90vw] rounded-xl shadow-lg border-4 border-cyan-300" />
-  </div>
-
-  <script>
-    // Lightbox logic
-    const galleryImgs = document.querySelectorAll('.gallery-img');
-    const lightboxModal = document.getElementById('lightbox-modal');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-
-    galleryImgs.forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxModal.classList.remove('hidden');
-        lightboxImg.alt = img.alt;
-      });
-      img.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          lightboxImg.src = img.src;
-          lightboxModal.classList.remove('hidden');
-          lightboxImg.alt = img.alt;
-        }
-      });
-    });
-    lightboxClose.addEventListener('click', () => {
-      lightboxModal.classList.add('hidden');
-      lightboxImg.src = '';
-    });
-    lightboxModal.addEventListener('click', (e) => {
-      if (e.target === lightboxModal) {
-        lightboxModal.classList.add('hidden');
-        lightboxImg.src = '';
-      }
-    });
-    document.addEventListener('keydown', (e) => {
-      if (!lightboxModal.classList.contains('hidden') && (e.key === 'Escape')) {
-        lightboxModal.classList.add('hidden');
-        lightboxImg.src = '';
-      }
-    });
-  </script>
-
-  <!-- FAQ Section -->
-  <section class="py-8 px-4 max-w-4xl mx-auto mb-12" data-aos="fade-up">
-    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-8">
-      <h3 class="text-xl font-bold mb-6 text-center text-cyan-300">Frequently Asked Questions</h3>
-      <div class="space-y-4">
-        <div>
-          <div class="font-semibold text-orange-400">What classes do you teach?</div>
-          <div class="text-gray-300">We offer coaching for Classes 1–12, BCA, B.Sc IT/CS, and entrance exams.</div>
-        </div>
-        <div>
-          <div class="font-semibold text-orange-400">Where are your centers located?</div>
-          <div class="text-gray-300">Gopipuram Colony and Near Railway Crossing, Halduchaur, Haldwani.</div>
-        </div>
-        <div>
-          <div class="font-semibold text-orange-400">Do you offer demo classes?</div>
-          <div class="text-gray-300">Yes, we offer free demo classes for new students. Contact us to schedule.</div>
-        </div>
-        <div>
-          <div class="font-semibold text-orange-400">How can parents track progress?</div>
-          <div class="text-gray-300">We provide regular feedback and parent-teacher meetings for continuous updates.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
-  <footer class="bg-black text-center py-4 mt-8 rounded-b-xl">
-    <p class="text-gray-400 text-sm">&copy; 2025 RD Learning Planet. All rights reserved.</p>
+  <footer class="bg-black text-center py-3 md:py-4">
+    <p class="text-gray-400 text-xs md:text-sm">&copy; 2025 RD Learning Planet. All rights reserved.</p>
   </footer>
-
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
