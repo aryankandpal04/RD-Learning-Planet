@@ -96,7 +96,7 @@ Typed.js, Anime.js, ScrollReveal, AOS, WOW.js, Notyf, Cleave.js, Inputmask, Just
 
 ---
 
-## �� Folder Structure
+## 📁 Folder Structure
 
 ```
 rd-learning-planet/
