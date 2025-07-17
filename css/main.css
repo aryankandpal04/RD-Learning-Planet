@@ -507,3 +507,11 @@ body { padding-top: 48px !important; }
 body, html {
   overflow-x: hidden !important;
 }
+
+.sunburst-menu-item.active-menu-item {
+  border: 3px solid #fff !important;
+  box-shadow: 0 0 24px 4px #f97316, 0 0 0 3px #fff;
+  background: #f97316 !important;
+  color: #fff !important;
+  z-index: 30;
+}
