@@ -26,6 +26,29 @@
 </head>
 
 <body class="bg-[#0f172a] text-white overflow-x-hidden">
+  <!-- Announcement Bar -->
+<div class="announcement-bar bg-yellow-400 text-black py-2 text-center text-sm sm:text-base md:text-lg font-semibold animate__animated animate__fadeIn overflow-hidden relative" data-aos="fade-down">
+  <div class="announcement-marquee whitespace-nowrap inline-block" style="will-change: transform;">
+📞 8938848457 | CBSE & UK Boards | Hindi & English Medium
+  </div>
+</div>
+<style>
+.announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  /* Remove margin-bottom for fixed bar */
+}
+body { padding-top: 48px !important; }
+@media (max-width: 600px) {
+  .announcement-bar {
+    font-size: 0.95rem !important;
+  }
+  body { padding-top: 40px !important; }
+}
+</style>
   <!-- Sunburst Half-Circle Menu (Right-Center, Polished) -->
   <div class="sunburst-menu-container" tabindex="-1" aria-label="Main Navigation">
     <button class="sunburst-menu-button" id="sunburstMenuBtn" aria-label="Open Menu" tabindex="0">
@@ -256,13 +279,6 @@
   </div>
 </section>
 
-<!-- Announcement Bar -->
-<div class="bg-yellow-400 text-black py-2 text-center text-sm sm:text-base md:text-lg font-semibold animate__animated animate__fadeIn mb-6 md:mb-12 overflow-hidden relative" data-aos="fade-down">
-  <div class="announcement-marquee whitespace-nowrap inline-block" style="will-change: transform;">
-  📞 8938848457 | CBSE & UK Boards | Hindi & English Medium
-</div>
-</div>
-
 <!-- Why RD Learning Planet -->
 <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12">
   <div class="bg-[#1e293b] rounded-xl shadow-lg p-4 md:p-8">
@@ -384,9 +400,11 @@
   <div class="bg-[#1e293b] rounded-xl shadow-lg p-4 md:p-8">
     <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center text-cyan-300 mb-3 md:mb-4">Tuition Fees</h2>
     <div class="text-center text-gray-300 space-y-1 md:space-y-2 text-xs md:text-base">
-    <p>📘 <strong>Class 6–8:</strong> ₹500 / subject</p>
-    <p>📗 <strong>Class 9–10:</strong> ₹600 / subject</p>
-    <p>📙 <strong>Class 11–12 & Higher:</strong> ₹700–800 / subject</p>
+      <p>📘 <strong>Class 1–5:</strong> ₹500 / subject</p>
+      <p>📗 <strong>Class 6–8:</strong> ₹600 / subject</p>
+      <p>📙 <strong>Class 9–10:</strong> ₹600 / subject</p>
+      <p>📒 <strong>Class 11–12 & Higher:</strong> ₹700 / subject</p>
+      <p>💻 <strong>BCA, BSc IT/CS, BPharma Mathematics:</strong> ₹1000</p>
     </div>
   </div>
 </section>
