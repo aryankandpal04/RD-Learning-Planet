@@ -180,12 +180,12 @@
     }
     @media (max-width: 600px) {
       .sunburst-menu-container {
-        width: 100vw;
-        height: 100vh;
+        width: auto;
+        height: auto;
         top: auto;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        right: auto;
+        bottom: auto;
+        left: auto;
         transform: none;
         pointer-events: none;
         z-index: 50;
@@ -206,6 +206,7 @@
         align-items: center;
         box-shadow: 0 0 8px 1px #f97316;
         pointer-events: all;
+        z-index: 100;
       }
       .sunburst-menu-label {
         font-size: 0.9rem;
@@ -226,7 +227,7 @@
         opacity: 0;
         pointer-events: none;
         transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.2s;
-        z-index: 51;
+        z-index: 101;
       }
       .sunburst-menu-item .label {
         font-size: 9px;
