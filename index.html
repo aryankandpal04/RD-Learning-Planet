@@ -42,10 +42,10 @@
     .sunburst-menu-container {
       position: fixed;
       top: 50%;
-      right: -18px; /* was 0, now pushed further right */
+      right: 0;
       z-index: 50;
-      width: clamp(160px, 18vw, 220px);
-      height: clamp(160px, 18vw, 220px);
+      width: 220px;
+      height: 220px;
       transform: translateY(-50%);
       display: flex;
       align-items: flex-end;
@@ -54,8 +54,8 @@
       font-family: 'Poppins', sans-serif;
     }
     .sunburst-menu-button {
-      width: clamp(120px, 15vw, 180px);
-      height: clamp(80px, 9vw, 110px);
+      width: 180px;
+      height: 110px;
       background: #f97316;
       color: #fff;
       border-radius: 110px 0 0 110px;
@@ -64,8 +64,8 @@
       text-align: left;
       position: absolute;
       top: 50%;
-      right: -18px; /* was 0, now pushed further right */
-      transform: translateY(-50%) translateX(50%);
+      right: 0;
+      transform: translateY(-50%) translateX(40%);
       cursor: pointer;
       box-shadow: 0 0 8px 1px #f97316;
       z-index: 10;
@@ -73,8 +73,8 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
-      padding-left: clamp(16px, 2vw, 28px);
+      transition: box-shadow 0.2s, background 0.2s, transform 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+      padding-left: 28px;
       font-family: 'Poppins', sans-serif;
     }
     .sunburst-menu-button:focus {
@@ -94,14 +94,14 @@
       font-family: 'Poppins', sans-serif;
     }
     .sunburst-menu-item {
-      width: clamp(40px, 6vw, 60px);
-      height: clamp(40px, 6vw, 60px);
+      width: 60px;
+      height: 60px;
       background: #f97316;
       color: #fff;
       border-radius: 50%;
       position: absolute;
       top: 50%;
-      right: -18px; /* match button offset */
+      right: 0;
       transform: translateY(-50%) translateX(50%);
       opacity: 0;
       pointer-events: none;
@@ -110,7 +110,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: clamp(14px, 2vw, 20px);
+      font-size: 20px;
       box-shadow: 0 2px 8px #f9731622;
       text-decoration: none;
       outline: none;
@@ -177,6 +177,9 @@
     .sunburst-menu-container.active .sunburst-menu-item:nth-child(7) {
       transform: rotate(90deg) translateX(-150px) rotate(-90deg);
       transition-delay: 0.40s;
+    }
+    .sunburst-menu-container.active .sunburst-menu-button {
+      transform: translateY(-50%) translateX(50%);
     }
   </style>
   <script>
