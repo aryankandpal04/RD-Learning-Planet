@@ -22,6 +22,7 @@ section, .section {
   border-radius: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,6 +49,7 @@ button, .btn, input[type="submit"] {
   transition: background 0.2s, color 0.2s;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 input, textarea, select {
@@ -93,19 +95,117 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08) !important;
 }
 
-/* Utility: Hide scrollbars for carousels, etc. */
-.hide-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+/* Announcement Bar */
+.bg-yellow-400 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+
+/* Announcement Bar Marquee */
+.announcement-marquee {
+  display: inline-block;
+  padding-left: 100vw;
+  animation: marquee-left 18s linear infinite;
+}
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+/* Hero Section */
+#hero img {
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px 0 rgba(34,211,238,0.10);
+}
+#hero a {
+  margin-top: 2rem;
+}
+
+/* Why RD Learning Planet Cards */
+.bg-white {
+  background: #fff !important;
+  color: #0f172a !important;
+}
+.bg-white i {
+  margin-bottom: 0.5rem;
+}
+
+/* Subjects Cards */
+.grid > div {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.grid > div i {
+  margin-bottom: 0.5rem;
+}
+
+/* Toppers Gallery */
+[data-aos="zoom-in"] .w-24 {
+  border: 3px solid #22d3ee;
+}
+
+/* Enquiry Form */
+#contact-form input, #contact-form textarea {
+  background: #0f172a;
+  color: #fff;
+  border: 1px solid #334155;
+}
+#contact-form input::placeholder, #contact-form textarea::placeholder {
+  color: #cbd5e1;
+  opacity: 1;
+}
+#contact-form input:focus, #contact-form textarea:focus {
+  border-color: #22d3ee;
+  outline: 2px solid #22d3ee;
+}
+#contact-form button {
+  background: #f97316;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+#contact-form button:hover {
+  background: #ea580c;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  border-radius: 0 0 1rem 1rem;
 }
 
 /* Responsive tweaks */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   section, .section {
+    max-width: 98vw;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+  .flex-row {
+    flex-direction: column !important;
+  }
+}
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.3rem; }
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  #hero img {
+    width: 80px;
+  }
+}
+
+#typed-text {
+  display: inline-block;
+  min-width: 260px;
+  min-height: 1.5em;
+  text-align: center;
 }
