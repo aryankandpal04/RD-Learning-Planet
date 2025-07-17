@@ -8,6 +8,8 @@ html, body {
   background: #0f172a;
   color: #fff;
   font-family: 'Poppins', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -17,12 +19,13 @@ body {
 
 section, .section {
   max-width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-bottom: 2.5rem;
+  border-radius: clamp(0.5rem, 2vw, 1rem);
+  padding-left: clamp(0.5rem, 2vw, 1.5rem);
+  padding-right: clamp(0.5rem, 2vw, 1.5rem);
+  margin-bottom: clamp(1rem, 3vw, 2.5rem);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
 }
 
 p {
@@ -38,8 +42,9 @@ p {
 }
 
 .card, .bg-white, .bg-[#1e293b], .bg-[#0f172a] {
-  border-radius: 1rem !important;
+  border-radius: clamp(0.5rem, 2vw, 1rem) !important;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+  padding: clamp(0.75rem, 2vw, 2rem) !important;
 }
 
 button, .btn, input[type="submit"] {
@@ -136,7 +141,8 @@ input:focus, textarea:focus, select:focus {
 
 /* Subjects Cards */
 .grid > div {
-  min-height: 160px;
+  min-height: unset !important;
+  height: auto !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,4 +313,53 @@ footer {
   min-width: 260px;
   min-height: 1.5em;
   text-align: center;
+}
+
+/* --- Responsive Menu & Card Sizing --- */
+.sunburst-menu-container {
+  width: clamp(160px, 18vw, 220px);
+  height: clamp(160px, 18vw, 220px);
+}
+.sunburst-menu-button {
+  width: clamp(120px, 15vw, 180px);
+  height: clamp(80px, 9vw, 110px);
+  border-radius: 110px 0 0 110px;
+  padding-left: clamp(16px, 2vw, 28px);
+}
+.sunburst-menu-item {
+  width: clamp(40px, 6vw, 60px);
+  height: clamp(40px, 6vw, 60px);
+  font-size: clamp(14px, 2vw, 20px);
+}
+.sunburst-menu-label {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+/* --- Aspect Ratio Tweaks for Ultra-Tall Screens --- */
+@media (max-aspect-ratio: 9/20) {
+  section, .section {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .card, .bg-white, .bg-[#1e293b], .bg-[#0f172a] {
+    padding: 0.75rem !important;
+  }
+  .sunburst-menu-container {
+    top: 45% !important;
+  }
+}
+
+/* --- Remove fixed heights for containers --- */
+.grid > div, .flex > div {
+  min-height: unset !important;
+  height: auto !important;
+}
+
+/* --- Overflow Protection --- */
+* {
+  box-sizing: border-box;
+}
+body, html {
+  overflow-x: hidden !important;
 }
