@@ -96,40 +96,50 @@ Typed.js, Anime.js, ScrollReveal, AOS, WOW.js, Notyf, Cleave.js, Inputmask, Just
 
 ---
 
-## 📁 Folder Structure
+## �� Folder Structure
 
+```
 rd-learning-planet/
 │
-├── index.html             ← Landing (Home) Page
-├── about.html             ← About the Coaching & Founder
-├── courses.html           ← Subjects, Entrance Prep, Extra Services
-├── stationary.html        ← RD Stationary section
-├── contact.html           ← Contact + Enquiry Form
+├── index.html           # Landing (Home) Page
+├── about.html           # About the Coaching & Founder
+├── courses.html         # Subjects, Entrance Prep, Extra Services
+├── stationary.html      # RD Stationary section
+├── contact.html         # Contact + Enquiry Form
 │
-├── /assets/
-│   ├── /images/           ← Logo, banners, gallery, faculty images
-│   └── /icons/
-│       └── favicon.ico    ← Optional
+├── assets/              # All static assets
+│   ├── images/          # Logo, banners, gallery, faculty images
+│   └── icons/           # Favicon and small UI assets
 │
-├── /css/
-│   ├── main.css           ← Custom styles (if any)
-│   ├── style.css          ← Custom styles (legacy/optional)
-│   ├── normalize.css      ← Reset/normalize CSS
-│   └── libraries.css      ← Imported: Tailwind, Bootstrap, AOS, etc.
+├── css/                 # Stylesheets
+│   ├── main.css         # Custom styles
+│   ├── libraries.css    # Imported: Tailwind, Bootstrap, AOS, etc.
+│   ├── normalize.css    # Reset/normalize CSS
+│   └── style.css        # Legacy/optional custom styles
 │
-├── /js/
-│   ├── main.js            ← Typed.js, animations, modals
-│   ├── validation.js      ← JustValidate/Parsley + Notyf
-│   ├── animations.js      ← AOS, GSAP, Anime.js
-│   ├── aos.js             ← AOS animations init (legacy/optional)
-│   ├── form-validation.js ← Form validation scripts (legacy/optional)
-│   ├── libraries.js       ← JS loaders/libraries (legacy/optional)
+├── js/                  # JavaScript files
+│   ├── main.js          # Typed.js, animations, modals
+│   ├── validation.js    # JustValidate/Parsley + Notyf
+│   ├── animations.js    # AOS, GSAP, Anime.js
+│   ├── aos.js           # AOS animations init (legacy/optional)
+│   ├── form-validation.js # Form validation scripts (legacy/optional)
+│   └── libraries.js     # JS loaders/libraries (legacy/optional)
 │
-├── /fonts/                ← Optional custom fonts
+├── fonts/               # Optional custom fonts
 │
-├── /docs/                 ← For documentation or extra pages
+├── docs/                # Documentation or extra pages
 │
-└── README.md              ← Website usage info
+├── .gitignore           # Git ignore rules
+├── README.md            # Project documentation (this file)
+└── ...                  # Other config or meta files
+```
+
+- **Main HTML pages** are at the root for easy access.
+- **assets/** contains all images and icons, organized by type.
+- **css/** and **js/** hold all styles and scripts, with clear separation of custom, library, and legacy files.
+- **fonts/** is for any custom font files you may add.
+- **docs/** is for extra documentation or static pages.
+- **README.md** gives an overview and usage info for contributors.
 
 ---
 
