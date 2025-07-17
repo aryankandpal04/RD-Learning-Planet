@@ -515,3 +515,36 @@ body, html {
   color: #fff !important;
   z-index: 30;
 }
+
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1001;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18);
+  font-size: 2rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.whatsapp-float-btn:hover, .whatsapp-float-btn:focus {
+  background: #1ebe57;
+  box-shadow: 0 6px 24px 0 rgba(34,211,102,0.25);
+  outline: 2px solid #fff;
+}
+@media (max-width: 600px) {
+  .whatsapp-float-btn {
+    bottom: 16px;
+    left: 16px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+}

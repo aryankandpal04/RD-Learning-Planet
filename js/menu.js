@@ -49,4 +49,14 @@ document.addEventListener('click', (e) => {
   if (menuOpen && !sunburstMenu.contains(e.target)) {
     closeMenu();
   }
-}); 
+});
+// Under development toast for menu links
+if (window.Notyf) {
+  document.querySelectorAll('.sunburst-menu-item[href^="#gallery"], .sunburst-menu-item[href^="#faq"], .sunburst-menu-item[href^="#testimonials"], .sunburst-menu-item[href^="#settings"]').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const notyf = new Notyf();
+      notyf.error('This page is under development.');
+    });
+  });
+} 
