@@ -1,120 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Courses – RD Learning Planet</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <style>body { font-family: 'Poppins', sans-serif; }</style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course – RD Learning Planet</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Notyf CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <style>body { font-family: 'Poppins', sans-serif; }</style>
+  </head>
 <body class="bg-[#0f172a] text-white overflow-x-hidden">
-  <!-- Announcement Bar -->
-  <!-- Remove this section entirely -->
-  <!-- Sunburst Menu -->
+
   <div class="sunburst-menu-container" tabindex="-1" aria-label="Main Navigation">
     <button class="sunburst-menu-button" id="sunburstMenuBtn" aria-label="Open Menu" tabindex="0">
       <span class="sunburst-menu-label desktop-menu-label">MENU</span>
       <span class="sunburst-menu-label mobile-menu-label" style="display:none;">M<br>E<br>N<br>U</span>
     </button>
     <a href="index.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">🏠</span><span class="label">Home</span></a>
-    <a href="about.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">📄</span><span class="label">About</span></a>
-    <a href="courses.html" class="sunburst-menu-item active-menu-item" tabindex="-1"><span class="icon">📚</span><span class="label">Courses</span></a>
+    <a href="about.html" class="sunburst-menu-item active-menu-item" tabindex="-1"><span class="icon">📄</span><span class="label">About</span></a>
+    <a href="courses.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">📚</span><span class="label">Courses</span></a>
     <a href="stationary.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">🛒</span><span class="label">Store</span></a>
     <a href="contact.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">📞</span><span class="label">Contact</span></a>
     <a href="settings.html" class="sunburst-menu-item" tabindex="-1"><span class="icon">⚙️</span><span class="label">Settings</span></a>
   </div>
-  <!-- Hero Section -->
+  <script src="js/menu.js"></script>
+  <!-- Hero Banner -->
   <section class="flex flex-col items-center justify-center py-8 px-4 md:py-16 md:px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b] mb-6 md:mb-12" id="hero">
     <div class="max-w-md md:max-w-lg w-full flex flex-col items-center">
-      <i class="fas fa-book-open text-5xl text-cyan-300 mb-4"></i>
-      <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-cyan-300 text-center">Our Courses</h1>
-      <p class="text-orange-400 italic mt-2 text-center text-sm sm:text-base">"Empowering every learner, every class."</p>
+      <img src="assets/images/logo.jpg" alt="RD Learning Planet Logo" class="mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 sm:mb-6 rounded-full border-4 border-cyan-300 shadow-lg object-cover animate__animated animate__fadeInDown" />
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-cyan-300 animate__animated animate__fadeInUp text-center">Courses RD Learning Planet</h1>
+      <p class="text-orange-400 italic mt-2 animate__animated animate__fadeInUp animate__delay-1s text-center text-sm sm:text-base">"A great place for your success."</p>
     </div>
   </section>
-  <!-- Courses Overview -->
-  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up">
-    <div class="bg-[#1e293b] rounded-xl shadow-lg p-4 md:p-8">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-cyan-300 mb-4 text-center">What We Offer</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-2 text-base">
-        <li>Class 1–12 (All Boards, Hindi & English Medium)</li>
-        <li>BCA, B.Sc IT/CS, BBA, B.Pharma</li>
-        <li>Entrance Exam Preparation (Sainik, Navodaya, Pantnagar)</li>
-        <li>Personalized doubt clearing and regular assessments</li>
-        <li>Affordable fees and flexible batches</li>
-      </ul>
+  <div class="flex flex-col items-center justify-center min-h-[40vh]">
+    <div class="under-development bg-orange-500 text-white text-center py-4 px-8 font-bold text-2xl rounded shadow animate__animated animate__flash mt-8">
+      This page is under development.
     </div>
-  </section>
-  <!-- Class-wise Breakdown -->
-  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up">
-    <div class="bg-[#1e293b] rounded-xl shadow-lg p-4 md:p-8">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-orange-400 mb-4 text-center">Class-wise Subjects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-        <div class="bg-blue-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center">
-          <h3 class="text-lg md:text-xl font-bold text-white mb-1">Class 1–5</h3>
-          <p class="text-xs md:text-sm text-gray-100">All Subjects</p>
-        </div>
-        <div class="bg-green-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center">
-          <h3 class="text-lg md:text-xl font-bold text-white mb-1">Class 6–8</h3>
-          <p class="text-xs md:text-sm text-gray-100">Maths, Science, English, Hindi, Social Science</p>
-        </div>
-        <div class="bg-purple-700 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center">
-          <h3 class="text-lg md:text-xl font-bold text-white mb-1">Class 9–10</h3>
-          <p class="text-xs md:text-sm text-gray-100">Maths, Science, English, Hindi, Social Science</p>
-        </div>
-        <div class="bg-red-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center">
-          <h3 class="text-lg md:text-xl font-bold text-white mb-1">Class 11–12</h3>
-          <p class="text-xs md:text-sm text-gray-100">Maths, Physics, Chemistry, Biology, English, Computer Science</p>
-        </div>
-        <div class="bg-yellow-500 text-black rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center">
-          <h3 class="text-lg md:text-xl font-bold mb-1">BCA, B.Sc IT/CS, BBA, B.Pharma</h3>
-          <p class="text-xs md:text-sm">Maths, Computer Science, Professional Subjects</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Entrance Exam Prep -->
-  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up">
-    <div class="bg-[#1e293b] rounded-xl shadow-lg p-4 md:p-8">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-cyan-300 mb-4 text-center">Entrance Exam Preparation</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-2 text-base">
-        <li>Sainik School Entrance</li>
-        <li>Navodaya Vidyalaya Entrance</li>
-        <li>Pantnagar University Entrance</li>
-        <li>Other competitive exams</li>
-      </ul>
-    </div>
-  </section>
-  <!-- Fees Section -->
-  <section class="py-6 px-4 md:py-10 md:px-6 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12">
-    <div class="bg-[#1e293b] rounded-xl shadow-lg p-4 md:p-8">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center text-cyan-300 mb-3 md:mb-4">Tuition Fees</h2>
-      <div class="text-center text-gray-300 space-y-1 md:space-y-2 text-xs md:text-base">
-        <p>📘 <strong>Class 1–5:</strong> ₹500 / subject</p>
-        <p>📗 <strong>Class 6–8:</strong> ₹600 / subject</p>
-        <p>📙 <strong>Class 9–10:</strong> ₹600 / subject</p>
-        <p>📒 <strong>Class 11–12 & Higher:</strong> ₹700 / subject</p>
-        <p>💻 <strong>BCA, BSc IT/CS, BPharma Mathematics:</strong> ₹1000</p>
-      </div>
-    </div>
-  </section>
-  <!-- Call to Action -->
-  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12 text-center" data-aos="fade-up">
-    <div class="bg-[#1e293b] rounded-xl shadow-lg p-4 md:p-8 flex flex-col items-center">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-orange-400 mb-4">Ready to Join?</h2>
-      <a href="contact.html" class="inline-block mt-4 px-8 py-3 bg-cyan-400 hover:bg-cyan-500 text-[#0f172a] font-bold rounded-full shadow-lg text-lg transition focus:outline-none focus:ring-2 focus:ring-cyan-300" aria-label="Contact Us">Contact Us</a>
-    </div>
-  </section>
+  </div>
   <!-- Footer -->
   <footer class="bg-black text-center py-3 md:py-4">
     <p class="text-gray-400 text-xs md:text-sm">&copy; 2025 RD Learning Planet. All rights reserved.</p>
   </footer>
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
-  <script src="js/menu.js"></script>
   <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
