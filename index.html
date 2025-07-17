@@ -182,7 +182,13 @@
     @media (max-width: 600px) {
       .desktop-menu-label { display: none !important; }
       .mobile-menu-label { display: inline-block !important; line-height: 1.1; font-size: 1.1em; text-align: center; margin-left: 5px; }
-      .sunburst-menu-button { right: -25px !important; }
+      .sunburst-menu-button {
+        right: -25px !important;
+        transition: right 0.35s cubic-bezier(.68,-0.55,.27,1.55);
+      }
+      .sunburst-menu-container.active .sunburst-menu-button {
+        right: 10px !important;
+      }
     }
   </style>
   <script>
