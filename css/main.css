@@ -321,8 +321,10 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100vw;
   z-index: 1000;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
 }
 body.announcement-padding { padding-top: 48px !important; }
 @media (max-width: 600px) {
@@ -551,4 +553,21 @@ body, html {
     height: 48px;
     font-size: 1.5rem;
   }
+}
+
+/* --- Robust Announcement Bar: Always fixed at top, full width, with shadow --- */
+.announcement-bar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  z-index: 3000 !important;
+  display: block !important;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+body.announcement-padding { padding-top: 48px !important; }
+@media (max-width: 600px) {
+  .announcement-bar { font-size: 0.95rem !important; }
+  body.announcement-padding { padding-top: 40px !important; }
 }
