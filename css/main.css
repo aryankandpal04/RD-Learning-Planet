@@ -315,7 +315,7 @@ footer {
   text-align: center;
 }
 
-/* --- Sunburst Menu & Announcement Bar Styles (moved from index.html) --- */
+/* Announcement Bar Styles */
 .announcement-bar {
   position: fixed;
   top: 0;
@@ -323,11 +323,15 @@ footer {
   width: 100vw;
   z-index: 1000;
 }
-body { padding-top: 48px !important; }
+body.announcement-padding { padding-top: 48px !important; }
 @media (max-width: 600px) {
-  .announcement-bar { font-size: 0.95rem !important; }
-  body { padding-top: 40px !important; }
+  .announcement-bar {
+    font-size: 0.95rem !important;
+  }
+  body.announcement-padding { padding-top: 40px !important; }
 }
+
+/* Sunburst Menu Styles */
 .sunburst-menu-container {
   position: fixed;
   top: 50%;
@@ -477,7 +481,6 @@ body { padding-top: 48px !important; }
     right: 10px !important;
   }
 }
-/* --- End Sunburst Menu & Announcement Bar Styles --- */
 
 /* --- Aspect Ratio Tweaks for Ultra-Tall Screens --- */
 @media (max-aspect-ratio: 9/20) {
