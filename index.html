@@ -17,6 +17,8 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <!-- Particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 
 <body>
@@ -50,9 +52,10 @@
   <!-- Hero Banner -->
   <br>
   <section
-    class="flex flex-col items-center justify-center py-8 px-4 md:py-16 md:px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b] mb-6 md:mb-12 transition-all duration-700"
+    class="flex flex-col items-center justify-center py-8 px-4 md:py-16 md:px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b] mb-6 md:mb-12 transition-all duration-700 relative overflow-hidden"
     id="hero" data-aos="fade-up">
-    <div class="max-w-md md:max-w-lg w-full flex flex-col items-center">
+    <div id="hero-particles" class="absolute inset-0 w-full h-full z-0 pointer-events-none" aria-hidden="true"></div>
+    <div class="max-w-md md:max-w-lg w-full flex flex-col items-center relative z-10">
       <img src="assets/images/logo.jpg" alt="RD Learning Planet Logo"
         class="mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 sm:mb-6 rounded-full border-4 border-cyan-300 shadow-lg object-cover animate__animated animate__fadeInDown" />
       <h1
@@ -75,22 +78,22 @@
         Planet?</h2>
       <div class="flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-stretch">
         <div
-          class="flex-1 bg-[#1e293b] text-white rounded-lg p-4 md:p-8 shadow text-center flex flex-col items-center animate__animated animate__fadeInLeft"
-          data-aos="zoom-in-up">
+          class="flex-1 bg-[#1e293b] text-white rounded-lg p-4 md:p-8 shadow text-center flex flex-col items-center"
+          data-aos="zoom-in-up" data-aos-delay="0">
           <i class="fas fa-chalkboard-teacher text-3xl md:text-4xl text-cyan-400 mb-2 md:mb-4" aria-hidden="true"></i>
           <h3 class="font-bold text-lg md:text-xl mb-1 md:mb-2">Quality Teaching</h3>
           <p class="text-sm md:text-base">Experienced faculty, personal attention, and proven results.</p>
         </div>
         <div
-          class="flex-1 bg-[#1e293b] text-white rounded-lg p-4 md:p-8 shadow text-center flex flex-col items-center animate__animated animate__fadeInUp"
-          data-aos="zoom-in-up" data-aos-delay="100">
+          class="flex-1 bg-[#1e293b] text-white rounded-lg p-4 md:p-8 shadow text-center flex flex-col items-center"
+          data-aos="zoom-in-up" data-aos-delay="120">
           <i class="fas fa-layer-group text-3xl md:text-4xl text-orange-400 mb-2 md:mb-4" aria-hidden="true"></i>
           <h3 class="font-bold text-lg md:text-xl mb-1 md:mb-2">Multiple Courses</h3>
           <p class="text-sm md:text-base">Wide range: 1st–12th, BCA, B.Sc, Entrance Prep, and more.</p>
         </div>
         <div
-          class="flex-1 bg-[#1e293b] text-white rounded-lg p-4 md:p-8 shadow text-center flex flex-col items-center animate__animated animate__fadeInRight"
-          data-aos="zoom-in-up" data-aos-delay="200">
+          class="flex-1 bg-[#1e293b] text-white rounded-lg p-4 md:p-8 shadow text-center flex flex-col items-center"
+          data-aos="zoom-in-up" data-aos-delay="240">
           <i class="fas fa-rupee-sign text-3xl md:text-4xl text-cyan-400 mb-2 md:mb-4" aria-hidden="true"></i>
           <h3 class="font-bold text-lg md:text-xl mb-1 md:mb-2">Affordable Fees</h3>
           <p class="text-sm md:text-base">Transparent, reasonable pricing for all classes and services.</p>
@@ -110,49 +113,83 @@
     </div>
   </section>
 
+  <!-- Faculty Section (added) -->
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12 transition-all duration-700" data-aos="fade-up">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
+      <h3 class="text-xl font-bold mb-6 text-center text-cyan-300">Our Faculty</h3>
+      <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+        <div class="flex flex-col items-center">
+          <img src="assets/images/DeepakPandey.png" alt="Mr. Deepak Pandey - Founder & Maths/Science Teacher" class="w-20 h-20 rounded-full border-4 border-cyan-300 shadow-md object-cover mb-2" />
+          <div class="font-semibold">Mr. Deepak Pandey</div>
+          <div class="text-sm text-gray-300">Maths & Science Teacher (Founder)</div>
+        </div>
+        <div class="flex flex-col items-center">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-2">
+            <circle cx="40" cy="40" r="40" fill="#22d3ee"/>
+            <ellipse cx="40" cy="50" rx="18" ry="10" fill="#1e293b"/>
+            <circle cx="40" cy="34" r="16" fill="#fff"/>
+            <ellipse cx="40" cy="38" rx="8" ry="6" fill="#f97316"/>
+          </svg>
+          <div class="font-semibold">Ma'am (Bio, Science)</div>
+          <div class="text-sm text-gray-300">Expert in Biology & Science (6–10)</div>
+        </div>
+        <div class="flex flex-col items-center">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-2">
+            <circle cx="40" cy="40" r="40" fill="#f97316"/>
+            <ellipse cx="40" cy="50" rx="18" ry="10" fill="#1e293b"/>
+            <circle cx="40" cy="34" r="16" fill="#fff"/>
+            <ellipse cx="40" cy="38" rx="8" ry="6" fill="#22d3ee"/>
+          </svg>
+          <div class="font-semibold">Sir (Math 6–10)</div>
+          <div class="text-sm text-gray-300">Specialist in Mathematics</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Subjects Snapshot -->
   <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12 transition-all duration-700" data-aos="fade-up">
     <div class="bg-[#1e293b] rounded-xl shadow-lg p-4 md:p-8">
       <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center text-cyan-300 mb-4 md:mb-8">Subjects Offered</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
         <div
-          class="bg-red-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition animate__animated animate__fadeInUp"
-          data-aos="fade-up">
+          class="bg-red-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition"
+          data-aos="fade-up" data-aos-delay="0">
           <i class="fas fa-atom text-xl md:text-2xl mb-2 md:mb-3" aria-hidden="true"></i>
           <h3 class="text-lg md:text-xl font-bold">Physics</h3>
           <p class="text-xs md:text-sm text-gray-100 mt-1 md:mt-2">For classes 11–12 by expert faculty.</p>
         </div>
         <div
-          class="bg-blue-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition animate__animated animate__fadeInUp"
-          data-aos="fade-up" data-aos-delay="100">
+          class="bg-blue-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition"
+          data-aos="fade-up" data-aos-delay="120">
           <i class="fas fa-square-root-alt text-xl md:text-2xl mb-2 md:mb-3" aria-hidden="true"></i>
           <h3 class="text-lg md:text-xl font-bold">Mathematics</h3>
           <p class="text-xs md:text-sm text-gray-100 mt-1 md:mt-2">For all classes & BCA/BSc students.</p>
         </div>
         <div
-          class="bg-green-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition animate__animated animate__fadeInUp"
-          data-aos="fade-up" data-aos-delay="200">
+          class="bg-green-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition"
+          data-aos="fade-up" data-aos-delay="240">
           <i class="fas fa-flask text-xl md:text-2xl mb-2 md:mb-3" aria-hidden="true"></i>
           <h3 class="text-lg md:text-xl font-bold">Chemistry</h3>
           <p class="text-xs md:text-sm text-gray-100 mt-1 md:mt-2">In-depth concepts and board preparation.</p>
         </div>
         <div
-          class="bg-yellow-500 text-black rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition animate__animated animate__fadeInUp"
-          data-aos="fade-up" data-aos-delay="300">
+          class="bg-yellow-500 text-black rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition"
+          data-aos="fade-up" data-aos-delay="360">
           <i class="fas fa-chart-bar text-xl md:text-2xl mb-2 md:mb-3" aria-hidden="true"></i>
           <h3 class="text-lg md:text-xl font-bold">Economics</h3>
           <p class="text-xs md:text-sm mt-1 md:mt-2">Theory and practical knowledge.</p>
         </div>
         <div
-          class="bg-purple-700 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition animate__animated animate__fadeInUp"
-          data-aos="fade-up" data-aos-delay="400">
+          class="bg-purple-700 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition"
+          data-aos="fade-up" data-aos-delay="480">
           <i class="fas fa-dna text-xl md:text-2xl mb-2 md:mb-3" aria-hidden="true"></i>
           <h3 class="text-lg md:text-xl font-bold">Science (6–10)</h3>
           <p class="text-xs md:text-sm mt-1 md:mt-2">Well explained concepts by ma'am.</p>
         </div>
         <div
-          class="bg-pink-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition animate__animated animate__fadeInUp"
-          data-aos="fade-up" data-aos-delay="500">
+          class="bg-pink-600 rounded-xl p-4 md:p-6 text-center shadow flex flex-col items-center hover:scale-105 transition"
+          data-aos="fade-up" data-aos-delay="600">
           <i class="fas fa-book text-xl md:text-2xl mb-2 md:mb-3" aria-hidden="true"></i>
           <h3 class="text-lg md:text-xl font-bold">All Subjects</h3>
           <p class="text-xs md:text-sm mt-1 md:mt-2">For Class 1 to 8 students (all boards).</p>
@@ -167,13 +204,9 @@
       <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center text-orange-400 mb-3 md:mb-6">Toppers Gallery
         <span class="text-xs md:text-sm text-gray-400">(Coming Soon)</span></h2>
       <div class="flex flex-row gap-2 md:gap-4 justify-center items-center">
-        <div class="w-14 h-14 md:w-24 md:h-24 bg-gray-700 rounded-full animate__animated animate__pulse"></div>
-        <div
-          class="w-14 h-14 md:w-24 md:h-24 bg-gray-700 rounded-full animate__animated animate__pulse animate__delay-1s">
-        </div>
-        <div
-          class="w-14 h-14 md:w-24 md:h-24 bg-gray-700 rounded-full animate__animated animate__pulse animate__delay-2s">
-        </div>
+        <div class="w-14 h-14 md:w-24 md:h-24 bg-gray-700 rounded-full" data-aos="zoom-in" data-aos-delay="0"></div>
+        <div class="w-14 h-14 md:w-24 md:h-24 bg-gray-700 rounded-full" data-aos="zoom-in" data-aos-delay="120"></div>
+        <div class="w-14 h-14 md:w-24 md:h-24 bg-gray-700 rounded-full" data-aos="zoom-in" data-aos-delay="240"></div>
       </div>
       <p class="text-center text-gray-400 mt-2 md:mt-4 text-xs md:text-base">Student success stories will be showcased
         here.</p>
@@ -200,16 +233,15 @@
       <p class="text-gray-300 text-center mb-3 md:mb-6 max-w-xs sm:max-w-2xl mx-auto text-xs md:text-base">At Center 1
         (Gopipuram), get notebooks, pens, pencils & more at affordable prices.</p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 text-center text-white font-medium">
-        <div class="bg-blue-700 p-4 md:p-6 rounded-xl flex flex-col items-center hover:scale-105 transition">
+        <div class="bg-blue-700 p-4 md:p-6 rounded-xl flex flex-col items-center hover:scale-105 transition" data-aos="fade-up" data-aos-delay="0">
           <p>📒 Notebooks</p>
           <p class="text-xs md:text-sm text-gray-100 mt-1">All sizes & types</p>
         </div>
-        <div class="bg-green-700 p-4 md:p-6 rounded-xl flex flex-col items-center hover:scale-105 transition">
+        <div class="bg-green-700 p-4 md:p-6 rounded-xl flex flex-col items-center hover:scale-105 transition" data-aos="fade-up" data-aos-delay="120">
           <p>🖊️ Pens & Pencils</p>
           <p class="text-xs md:text-sm text-gray-100 mt-1">Value packs</p>
         </div>
-        <div
-          class="bg-yellow-500 text-black p-4 md:p-6 rounded-xl flex flex-col items-center hover:scale-105 transition">
+        <div class="bg-yellow-500 text-black p-4 md:p-6 rounded-xl flex flex-col items-center hover:scale-105 transition" data-aos="fade-up" data-aos-delay="240">
           <p>📚 School Supplies</p>
           <p class="text-xs md:text-sm mt-1">Rulers, erasers, staplers</p>
         </div>
@@ -284,6 +316,7 @@
       form.reset();
     });
   </script>
+  <script src="js/particles-init.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/main.js"></script>
   <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener"
