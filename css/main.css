@@ -498,10 +498,10 @@ body.announcement-padding {
 .sunburst-menu-button {
   width: 180px;
   height: 110px;
-  background: #f97316;
+  background: linear-gradient(90deg, #f97316 0%, #22d3ee 100%);
   color: #fff;
   border-radius: 110px 0 0 110px;
-  border: 3px solid #f97316;
+  border: 3px solid #22d3ee;
   border-right: none;
   text-align: left;
   position: absolute;
@@ -509,7 +509,7 @@ body.announcement-padding {
   right: 0;
   transform: translateY(-50%) translateX(50%);
   cursor: pointer;
-  box-shadow: 0 0 8px 1px #f97316;
+  box-shadow: 0 0 8px 1px #22d3ee;
   z-index: 10;
   outline: none;
   display: flex;
