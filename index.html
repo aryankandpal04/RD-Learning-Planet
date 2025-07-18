@@ -45,7 +45,18 @@
     <img src="assets/images/logo.jpg" alt="RD Learning Planet Logo" class="mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 sm:mb-6 rounded-full border-4 border-cyan-300 shadow-lg object-cover animate__animated animate__fadeInDown" />
     <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-cyan-300 animate__animated animate__fadeInUp text-center">RD Learning Planet</h1>
     <p class="text-orange-400 italic mt-2 animate__animated animate__fadeInUp animate__delay-1s text-center text-sm sm:text-base">"A great place for your success."</p>
-    <p id="typed-text" class="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-white font-medium animate__animated animate__fadeInUp animate__delay-2s text-center" aria-live="polite"></p>
+    <p id="typed-text" style="font-family: 'Poppins', 'Courier New', monospace; color: #22d3ee; font-size: 1.5rem; background: transparent; margin-top: 1rem; text-align: center; font-weight: 500; letter-spacing: 0.01em; white-space: nowrap;" aria-live="polite"></p>
+    <style>
+  #typed-text .typed-cursor {
+    display: inline-block;
+    color: #22d3ee;
+    animation: blink 0.7s infinite;
+  }
+  @keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+</style>
     <a href="#enquiry-form" class="inline-block mt-6 sm:mt-8 px-6 sm:px-8 py-2 sm:py-3 bg-cyan-400 hover:bg-cyan-500 text-[#0f172a] font-bold rounded-full shadow-lg text-base sm:text-lg transition animate__animated animate__pulse animate__delay-3s focus:outline-none focus:ring-2 focus:ring-cyan-300" aria-label="Enroll Now">Enroll Now</a>
   </div>
 </section>
@@ -212,12 +223,7 @@
 <script>AOS.init();</script>
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<!-- <script>
-  new Typed('#typed-text', {
-      strings: ['1st–12th Classes', 'BCA, BSc, BBA, B.Pharma', 'Sainik School Exam Preparation',' Navodaya Vidyala Exam Prepration', 'Hindi and English Medium','CBSE and UK Boards','Mathematics','Science','Economics','Chemistry','Physics','All Subjects'],
-    typeSpeed: 55, backSpeed: 30, loop: true
-  });
-</script> -->
+
 
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 <script>
@@ -230,6 +236,7 @@
   });
 </script>
 <script src="js/menu.js"></script>
+<script src="js/main.js"></script>
 <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
