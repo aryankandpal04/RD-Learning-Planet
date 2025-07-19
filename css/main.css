@@ -585,18 +585,13 @@ body.announcement-padding {
 
 .sunburst-menu-item:hover,
 .sunburst-menu-item:focus {
-  box-shadow: 0 0 16px 2px #f97316, 0 0 4px #fff;
-  outline: 2px solid #fff;
   z-index: 20;
   transform: scale(1.15) translateY(-50%) translateX(50%);
-  border: 2px solid #fff;
 }
 
-/* .sunburst-menu-item:hover .label,
-.sunburst-menu-item:focus .label,
-.sunburst-menu-item:hover .icon,
-.sunburst-menu-item:focus .icon {
-} */
+.sunburst-menu-item.active-menu-item {
+  z-index: 30;
+}
 
 .sunburst-menu-container.active .sunburst-menu-item {
   opacity: 1;
@@ -693,12 +688,6 @@ body.announcement-padding {
 body,
 html {
   overflow-x: hidden !important;
-}
-
-.sunburst-menu-item.active-menu-item {
-  border: 3px solid #fff !important;
-  box-shadow: 0 0 24px 4px #f97316, 0 0 0 3px #fff;
-  z-index: 30;
 }
 
 .whatsapp-float-btn {
