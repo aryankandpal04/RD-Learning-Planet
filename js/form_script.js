@@ -321,20 +321,26 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.jspdf || window.jspdf_umd || window.jspdf) {
           const { jsPDF } = window.jspdf || window.jspdf_umd || window.jspdf;
           const doc = new jsPDF();
-          let y = 15;
-          function addField(label, value) {
-            doc.text(label + ':', 10, y);
-            doc.text(String(value), 70, y);
-            y += 10;
-          }
+          // Header
+          doc.setFillColor(15, 23, 42); // #0f172a
+          doc.rect(0, 0, 210, 20, 'F');
+          doc.setTextColor(34, 211, 238); // #22d3ee
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(18);
+          doc.text('RD Learning Planet', 105, 12, { align: 'center' });
+          doc.setFontSize(12);
+          doc.setTextColor(0,0,0);
+          // Gather data
           const get = id => document.getElementById(id);
-          addField('Student Name', get('username').value);
-          addField("Parent/Guardian's Name", get('guardianname').value);
-          addField('Address', get('address').value);
-          addField('School/College Name', get('schoolname').value);
-          addField('Contact Number', get('contactno').value);
-          addField("Parent/Guardian's Contact Number", get('parent_contactno').value);
-          addField('Class/Course', get('class').options[get('class').selectedIndex].text);
+          let data = [
+            ['Student Name', get('username').value],
+            ["Parent/Guardian's Name", get('guardianname').value],
+            ['Address', get('address').value],
+            ['School/College Name', get('schoolname').value],
+            ['Contact Number', get('contactno').value],
+            ["Parent/Guardian's Contact Number", get('parent_contactno').value],
+            ['Class/Course', get('class').options[get('class').selectedIndex].text],
+          ];
           // Subjects
           let subjects = [];
           [
@@ -347,21 +353,64 @@ document.addEventListener("DOMContentLoaded", function () {
               if (input && input.checked) subjects.push(label.textContent.trim());
             }
           });
-          addField('Subjects', subjects.length ? subjects.join(', ') : '');
-          addField('Medium of Instruction', get('medium').options[get('medium').selectedIndex].text);
+          data.push(['Subjects', subjects.length ? subjects.join(', ') : '']);
+          data.push(['Medium of Instruction', get('medium').options[get('medium').selectedIndex].text]);
           let board = get('board').options[get('board').selectedIndex].text;
           if (get('board').value === 'Other') board += ' (' + get('otherBoard').value + ')';
-          addField('Board', board);
-          addField('Parent/Guardian Email', get('parent_email').value);
-          addField('Joining Date', get('date').value);
+          data.push(['Board', board]);
+          data.push(['Parent/Guardian Email', get('parent_email').value]);
+          data.push(['Joining Date', get('date').value]);
           // Gender
           let gender = '';
           const genderInputs = document.querySelectorAll('input[name="gender"]');
           genderInputs.forEach(r => { if (r.checked) gender = r.value; });
-          addField('Gender', gender.charAt(0).toUpperCase() + gender.slice(1));
-          // Photo: just show filename
-          addField('Student Photo', get('photo').files[0] ? get('photo').files[0].name : '');
-          doc.save('registration_details.pdf');
+          data.push(['Gender', gender.charAt(0).toUpperCase() + gender.slice(1)]);
+          // Photo: just show filename for now, image will be added below
+          let photoFile = get('photo').files[0];
+          data.push(['Student Photo', photoFile ? photoFile.name : '']);
+          // Table
+          doc.autoTable({
+            head: [['Field', 'Value']],
+            body: data,
+            startY: 26,
+            styles: { font: 'helvetica', fontSize: 11, cellPadding: 2 },
+            headStyles: { fillColor: [34, 211, 238], textColor: 15, fontStyle: 'bold' },
+            columnStyles: { 0: { fontStyle: 'bold', cellWidth: 60 }, 1: { cellWidth: 120 } },
+            margin: { left: 14, right: 14 },
+          });
+          let y = doc.lastAutoTable.finalY + 10;
+          // Embed photo if available
+          if (photoFile) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              const imgData = e.target.result;
+              // Fit image to width 40mm, keep aspect ratio
+              let imgProps = doc.getImageProperties(imgData);
+              let pdfWidth = 40;
+              let pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+              doc.setFontSize(12);
+              doc.setTextColor(0,0,0);
+              doc.text('Student Photo:', 14, y);
+              doc.addImage(imgData, 'JPEG', 60, y - 5, pdfWidth, pdfHeight);
+              y += pdfHeight + 10;
+              // Footer
+              doc.setDrawColor(34, 211, 238);
+              doc.line(14, y, 196, y);
+              doc.setFontSize(10);
+              doc.setTextColor(120,120,120);
+              doc.text('Generated by RD Learning Planet Registration', 14, y+7);
+              doc.save('registration_details.pdf');
+            };
+            reader.readAsDataURL(photoFile);
+          } else {
+            // Footer
+            doc.setDrawColor(34, 211, 238);
+            doc.line(14, y, 196, y);
+            doc.setFontSize(10);
+            doc.setTextColor(120,120,120);
+            doc.text('Generated by RD Learning Planet Registration', 14, y+7);
+            doc.save('registration_details.pdf');
+          }
         }
         // --- END PDF GENERATION ---
         form.reset();
