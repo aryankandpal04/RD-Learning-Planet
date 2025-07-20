@@ -317,6 +317,53 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // Remove this if you want real submission
         if (notyf) notyf.success("Registration submitted successfully!");
         else alert("Registration submitted successfully!");
+        // --- PDF GENERATION ---
+        if (window.jspdf || window.jspdf_umd || window.jspdf) {
+          const { jsPDF } = window.jspdf || window.jspdf_umd || window.jspdf;
+          const doc = new jsPDF();
+          let y = 15;
+          function addField(label, value) {
+            doc.text(label + ':', 10, y);
+            doc.text(String(value), 70, y);
+            y += 10;
+          }
+          const get = id => document.getElementById(id);
+          addField('Student Name', get('username').value);
+          addField("Parent/Guardian's Name", get('guardianname').value);
+          addField('Address', get('address').value);
+          addField('School/College Name', get('schoolname').value);
+          addField('Contact Number', get('contactno').value);
+          addField("Parent/Guardian's Contact Number", get('parent_contactno').value);
+          addField('Class/Course', get('class').options[get('class').selectedIndex].text);
+          // Subjects
+          let subjects = [];
+          [
+            'allSubjectsLabel', 'mathLabel', 'scienceLabel', 'physicsLabel',
+            'chemistryLabel', 'bioLabel', 'economicsLabel'
+          ].forEach(id => {
+            const label = get(id);
+            if (label && label.style.display !== 'none') {
+              const input = label.querySelector('input[type=checkbox]');
+              if (input && input.checked) subjects.push(label.textContent.trim());
+            }
+          });
+          addField('Subjects', subjects.length ? subjects.join(', ') : '');
+          addField('Medium of Instruction', get('medium').options[get('medium').selectedIndex].text);
+          let board = get('board').options[get('board').selectedIndex].text;
+          if (get('board').value === 'Other') board += ' (' + get('otherBoard').value + ')';
+          addField('Board', board);
+          addField('Parent/Guardian Email', get('parent_email').value);
+          addField('Joining Date', get('date').value);
+          // Gender
+          let gender = '';
+          const genderInputs = document.querySelectorAll('input[name="gender"]');
+          genderInputs.forEach(r => { if (r.checked) gender = r.value; });
+          addField('Gender', gender.charAt(0).toUpperCase() + gender.slice(1));
+          // Photo: just show filename
+          addField('Student Photo', get('photo').files[0] ? get('photo').files[0].name : '');
+          doc.save('registration_details.pdf');
+        }
+        // --- END PDF GENERATION ---
         form.reset();
         toggleSubjectCheckboxes();
       }
