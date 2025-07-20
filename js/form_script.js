@@ -53,10 +53,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function toggleOtherBoardField() {
+    var boardSelect = document.getElementById("board");
+    var otherBoardDiv = document.getElementById("otherBoardDiv");
+    var otherBoardInput = document.getElementById("otherBoard");
+    if (boardSelect && otherBoardDiv) {
+      if (boardSelect.value === "Other") {
+        otherBoardDiv.style.display = "block";
+      } else {
+        otherBoardDiv.style.display = "none";
+        if (otherBoardInput) otherBoardInput.value = "";
+      }
+    }
+  }
+
   var classSelect = document.getElementById("class");
   if (classSelect) {
     classSelect.addEventListener("change", toggleSubjectCheckboxes);
     toggleSubjectCheckboxes();
+  }
+
+  var boardSelect = document.getElementById("board");
+  if (boardSelect) {
+    boardSelect.addEventListener("change", toggleOtherBoardField);
+    toggleOtherBoardField();
   }
 
   function validateForm() {
