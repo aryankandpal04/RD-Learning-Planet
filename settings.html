@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Settings – RD Learning Planet</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Notyf CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/main.css">
-    <style>body { font-family: 'Poppins', sans-serif; }</style>
-  </head>
-  <body class="bg-[#0f172a] text-white overflow-x-hidden">
 
-    <!-- MENU (extra bright active tab with glow) -->
-    <div class="sunburst-menu-container" tabindex="-1" aria-label="Main Navigation">
-      <button class="sunburst-menu-button" id="sunburstMenuBtn" aria-label="Open Menu" tabindex="0">
-        <span class="sunburst-menu-label desktop-menu-label">MENU</span>
-        <span class="sunburst-menu-label mobile-menu-label" style="display:none;">M<br>E<br>N<br>U</span>
-      </button>
-      <a href="index.html"
-        class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#f97316]/20 border border-orange-400/30 shadow-lg transition-all duration-300 hover:to-[#f97316]/60 hover:shadow-orange-300/60 hover:shadow-2xl"
-        tabindex="-1"><span class="icon text-orange-300 hover:text-orange-400">🏠</span><span class="label">Home</span></a>
-      <a href="about.html"
-        class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#22d3ee]/20 border border-cyan-400/30 shadow-lg transition-all duration-300 hover:to-[#22d3ee]/60 hover:shadow-cyan-300/60 hover:shadow-2xl"
-        tabindex="-1"><span class="icon text-cyan-300 hover:text-cyan-400">📄</span><span class="label">About</span></a>
-      <a href="courses.html"
-        class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#f97316]/20 border border-orange-400/30 shadow-lg transition-all duration-300 hover:to-[#f97316]/60 hover:shadow-orange-300/60 hover:shadow-2xl"
-        tabindex="-1"><span class="icon text-orange-300 hover:text-orange-400">📚</span><span class="label">Courses</span></a>
-      <a href="stationary.html"
-        class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#22d3ee]/20 border border-cyan-400/30 shadow-lg transition-all duration-300 hover:to-[#22d3ee]/60 hover:shadow-cyan-300/60 hover:shadow-2xl"
-        tabindex="-1"><span class="icon text-cyan-300 hover:text-cyan-400">🛒</span><span class="label">Store</span></a>
-      <a href="contact.html"
-        class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#f97316]/20 border border-orange-400/30 shadow-lg transition-all duration-300 hover:to-[#f97316]/60 hover:shadow-orange-300/60 hover:shadow-2xl"
-        tabindex="-1"><span class="icon text-orange-300 hover:text-orange-400">📞</span><span class="label">Contact</span></a>
-      <a href="settings.html"
-        class="sunburst-menu-item active-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#22d3ee]/90 border-2 border-cyan-400 shadow-lg shadow-cyan-400/70 ring-4 ring-cyan-300/40 transition-all duration-300"
-        tabindex="-1"><span class="icon text-cyan-400 drop-shadow-[0_0_6px_#22d3ee]">⚙️</span><span class="label">Settings</span></a>
-    </div>
-    <script src="js/menu.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings – RD Learning Planet</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Notyf CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0f172a] text-white overflow-x-hidden">
+
+  <!-- MENU (extra bright active tab with glow) -->
+  <div class="sunburst-menu-container" tabindex="-1" aria-label="Main Navigation">
+    <button class="sunburst-menu-button" id="sunburstMenuBtn" aria-label="Open Menu" tabindex="0">
+      <span class="sunburst-menu-label desktop-menu-label">MENU</span>
+      <span class="sunburst-menu-label mobile-menu-label" style="display:none;">M<br>E<br>N<br>U</span>
+    </button>
+    <a href="index.html"
+      class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#f97316]/20 border border-orange-400/30 shadow-lg transition-all duration-300 hover:to-[#f97316]/60 hover:shadow-orange-300/60 hover:shadow-2xl"
+      tabindex="-1"><span class="icon text-orange-300 hover:text-orange-400">🏠</span><span
+        class="label">Home</span></a>
+    <a href="about.html"
+      class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#22d3ee]/20 border border-cyan-400/30 shadow-lg transition-all duration-300 hover:to-[#22d3ee]/60 hover:shadow-cyan-300/60 hover:shadow-2xl"
+      tabindex="-1"><span class="icon text-cyan-300 hover:text-cyan-400">📄</span><span class="label">About</span></a>
+    <a href="courses.html"
+      class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#f97316]/20 border border-orange-400/30 shadow-lg transition-all duration-300 hover:to-[#f97316]/60 hover:shadow-orange-300/60 hover:shadow-2xl"
+      tabindex="-1"><span class="icon text-orange-300 hover:text-orange-400">📚</span><span
+        class="label">Courses</span></a>
+    <a href="stationary.html"
+      class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#22d3ee]/20 border border-cyan-400/30 shadow-lg transition-all duration-300 hover:to-[#22d3ee]/60 hover:shadow-cyan-300/60 hover:shadow-2xl"
+      tabindex="-1"><span class="icon text-cyan-300 hover:text-cyan-400">🛒</span><span class="label">Store</span></a>
+    <a href="contact.html"
+      class="sunburst-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#f97316]/20 border border-orange-400/30 shadow-lg transition-all duration-300 hover:to-[#f97316]/60 hover:shadow-orange-300/60 hover:shadow-2xl"
+      tabindex="-1"><span class="icon text-orange-300 hover:text-orange-400">📞</span><span
+        class="label">Contact</span></a>
+    <a href="settings.html"
+      class="sunburst-menu-item active-menu-item bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#22d3ee]/90 border-2 border-cyan-400 shadow-lg shadow-cyan-400/70 ring-4 ring-cyan-300/40 transition-all duration-300"
+      tabindex="-1"><span class="icon text-cyan-400 drop-shadow-[0_0_6px_#22d3ee]">⚙️</span><span
+        class="label">Settings</span></a>
+  </div>
+  <script src="js/menu.js"></script>
   <!-- Hero Banner -->
-  <section class="flex flex-col items-center justify-center py-8 px-4 md:py-16 md:px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b] mb-6 md:mb-12" id="hero">
+  <section
+    class="flex flex-col items-center justify-center py-8 px-4 md:py-16 md:px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b] mb-6 md:mb-12"
+    id="hero">
     <div class="max-w-md md:max-w-lg w-full flex flex-col items-center">
-      <img src="assets/images/logo.jpg" alt="RD Learning Planet Logo" class="mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 sm:mb-6 rounded-full border-4 border-cyan-300 shadow-lg object-cover animate__animated animate__fadeInDown" />
-      <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-cyan-300 animate__animated animate__fadeInUp text-center">Settings RD Learning Planet</h1>
-      <p class="text-orange-400 italic mt-2 animate__animated animate__fadeInUp animate__delay-1s text-center text-sm sm:text-base">"A great place for your success."</p>
+      <img src="assets/images/logo.jpg" alt="RD Learning Planet Logo"
+        class="mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 sm:mb-6 rounded-full border-4 border-cyan-300 shadow-lg object-cover animate__animated animate__fadeInDown" />
+      <h1
+        class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-cyan-300 animate__animated animate__fadeInUp text-center">
+        Settings RD Learning Planet</h1>
+      <p
+        class="text-orange-400 italic mt-2 animate__animated animate__fadeInUp animate__delay-1s text-center text-sm sm:text-base">
+        "A great place for your success."</p>
     </div>
   </section>
   <div class="flex flex-col items-center justify-center min-h-[40vh]">
-    <div class="under-development bg-orange-500 text-white text-center py-4 px-8 font-bold text-2xl rounded shadow animate__animated animate__flash mt-8">
+    <div
+      class="under-development bg-orange-500 text-white text-center py-4 px-8 font-bold text-2xl rounded shadow animate__animated animate__flash mt-8">
       This page is under development.
     </div>
   </div>
@@ -66,8 +84,10 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
-  <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener"
+    aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 </body>
+
 </html>
