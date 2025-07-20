@@ -18,28 +18,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     checkboxesDiv.style.display = "none";
 
-    // Show relevant checkboxes based on class
-    if (selectedClass === "Class 1-5") {
+    // Show relevant checkboxes based on class/course
+    if (["1","2","3","4","5"].includes(selectedClass)) {
       checkboxesDiv.style.display = "block";
       if (allSubjectsLabel) allSubjectsLabel.style.display = "block";
       if (mathLabel) mathLabel.style.display = "block";
       if (scienceLabel) scienceLabel.style.display = "block";
-    } else if (selectedClass === "Class 6-8") {
+    } else if (["6","7","8"].includes(selectedClass)) {
       checkboxesDiv.style.display = "block";
       if (allSubjectsLabel) allSubjectsLabel.style.display = "block";
       if (scienceLabel) scienceLabel.style.display = "block";
       if (mathLabel) mathLabel.style.display = "block";
-    } else if (selectedClass === "Class 9-10") {
+    } else if (["9","10"].includes(selectedClass)) {
       checkboxesDiv.style.display = "block";
       if (mathLabel) mathLabel.style.display = "block";
       if (scienceLabel) scienceLabel.style.display = "block";
-    } else if (selectedClass === "Class 11-12") {
+    } else if (["11","12"].includes(selectedClass)) {
       checkboxesDiv.style.display = "block";
       if (physicsLabel) physicsLabel.style.display = "block";
       if (chemistryLabel) chemistryLabel.style.display = "block";
       if (bioLabel) bioLabel.style.display = "block";
       if (mathLabel) mathLabel.style.display = "block";
       if (economicsLabel) economicsLabel.style.display = "block";
+    } else if (selectedClass === "BCA/BSc mathematics" || selectedClass === "BSc CS/IT") {
+      checkboxesDiv.style.display = "block";
+      if (mathLabel) mathLabel.style.display = "block";
+    } else if (selectedClass === "BBA") {
+      checkboxesDiv.style.display = "block";
+      if (economicsLabel) economicsLabel.style.display = "block";
+    } else if (selectedClass === "B.Pharma") {
+      checkboxesDiv.style.display = "block";
+      if (bioLabel) bioLabel.style.display = "block";
+      if (chemistryLabel) chemistryLabel.style.display = "block";
     }
   }
 
