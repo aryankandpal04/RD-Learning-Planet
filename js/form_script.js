@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  function toggleSubjectCheckboxes() {
-    var classSelect = document.getElementById("class");
+    function toggleSubjectCheckboxes() {
+      var classSelect = document.getElementById("class");
     if (!classSelect) return;
-    var selectedClass = classSelect.options[classSelect.selectedIndex].value;
-    var checkboxesDiv = document.getElementById("subjectCheckboxes");
-    var mathLabel = document.getElementById("mathLabel");
-    var physicsLabel = document.getElementById("physicsLabel");
-    var chemistryLabel = document.getElementById("chemistryLabel");
-    var scienceLabel = document.getElementById("scienceLabel");
+      var selectedClass = classSelect.options[classSelect.selectedIndex].value;
+      var checkboxesDiv = document.getElementById("subjectCheckboxes");
+      var mathLabel = document.getElementById("mathLabel");
+      var physicsLabel = document.getElementById("physicsLabel");
+      var chemistryLabel = document.getElementById("chemistryLabel");
+      var scienceLabel = document.getElementById("scienceLabel");
     var bioLabel = document.getElementById("bioLabel");
     var economicsLabel = document.getElementById("economicsLabel");
     var allSubjectsLabel = document.getElementById("allSubjectsLabel");
@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
       checkboxesDiv.style.display = "block";
       if (mathLabel) mathLabel.style.display = "block";
     } else if (selectedClass === "BBA") {
-      checkboxesDiv.style.display = "block";
+        checkboxesDiv.style.display = "block";
       if (economicsLabel) economicsLabel.style.display = "block";
     } else if (selectedClass === "B.Pharma") {
-      checkboxesDiv.style.display = "block";
+        checkboxesDiv.style.display = "block";
       if (bioLabel) bioLabel.style.display = "block";
       if (chemistryLabel) chemistryLabel.style.display = "block";
     }
@@ -64,9 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
         otherBoardDiv.style.display = "none";
         if (otherBoardInput) otherBoardInput.value = "";
       }
+      }
     }
-  }
-
+  
   var classSelect = document.getElementById("class");
   if (classSelect) {
     classSelect.addEventListener("change", toggleSubjectCheckboxes);
@@ -77,6 +77,50 @@ document.addEventListener("DOMContentLoaded", function () {
   if (boardSelect) {
     boardSelect.addEventListener("change", toggleOtherBoardField);
     toggleOtherBoardField();
+  }
+  
+  // Helper for Indian mobile validation
+  function isValidIndianMobile(number) {
+    // Accepts: 9876543210, 09876543210, +91 9876543210, +919876543210, 91-9876543210, etc.
+    const cleaned = number.replace(/\s|-/g, "");
+    return (
+      /^\+91[6-9]\d{9}$/.test(cleaned) ||
+      /^91[6-9]\d{9}$/.test(cleaned) ||
+      /^0[6-9]\d{9}$/.test(cleaned) ||
+      /^[6-9]\d{9}$/.test(cleaned)
+    );
+  }
+
+  function isAlphaOrSpace(str) {
+    // Allow common Indian name characters, spaces, dots, hyphens, apostrophes
+    return /^[a-zA-Z .'-]+$/.test(str.trim());
+  }
+
+  function isValidAddress(str) {
+    return str.trim().length >= 10;
+  }
+
+  function isValidSchoolName(str) {
+    return str.trim().length >= 3;
+  }
+
+  function isValidImageFile(input) {
+    if (!input.files || !input.files[0]) return false;
+    const file = input.files[0];
+    const validTypes = ["image/jpeg", "image/png", "image/gif", "image/webp", "image/bmp", "image/svg+xml"];
+    return validTypes.includes(file.type) && file.size <= 5 * 1024 * 1024; // 5MB
+  }
+
+  function isValidDateTodayOrFuture(dateStr) {
+    if (!dateStr) return false;
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const inputDate = new Date(dateStr);
+    return inputDate >= today;
+  }
+
+  function isValidEmail(str) {
+    return /^\S+@\S+\.\S+$/.test(str.trim());
   }
 
   function validateForm() {
@@ -100,20 +144,26 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!studentNameInput.value.trim()) {
       return "Please enter student name.";
     }
+    if (!isAlphaOrSpace(studentNameInput.value)) {
+      return "Student name should only contain letters and spaces.";
+    }
     if (!guardianNameInput.value.trim()) {
       return "Please enter parent/guardian's name.";
     }
-    if (!addressInput.value.trim()) {
-      return "Please enter address.";
+    if (!isAlphaOrSpace(guardianNameInput.value)) {
+      return "Parent/Guardian's name should only contain letters and spaces.";
     }
-    if (!schoolNameInput.value.trim()) {
-      return "Please enter school/college name.";
+    if (!addressInput.value.trim() || !isValidAddress(addressInput.value)) {
+      return "Please enter a valid address (at least 10 characters).";
     }
-    if (!contactNumberInput.value.trim() || !/^\d{10}$/.test(contactNumberInput.value.trim())) {
-      return "Please enter a valid 10-digit student contact number.";
+    if (!schoolNameInput.value.trim() || !isValidSchoolName(schoolNameInput.value)) {
+      return "Please enter a valid school/college name (at least 3 characters).";
     }
-    if (!parentContactInput.value.trim() || !/^\d{10}$/.test(parentContactInput.value.trim())) {
-      return "Please enter a valid 10-digit parent/guardian contact number.";
+    if (!contactNumberInput.value.trim() || !isValidIndianMobile(contactNumberInput.value.trim())) {
+      return "Please enter a valid Indian student contact number (e.g. +91 9876543210, 9876543210, 09876543210).";
+    }
+    if (!parentContactInput.value.trim() || !isValidIndianMobile(parentContactInput.value.trim())) {
+      return "Please enter a valid Indian parent/guardian contact number (e.g. +91 9876543210, 9876543210, 09876543210).";
     }
     if (!classInput.value) {
       return "Please select class/course.";
@@ -131,17 +181,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!boardInput.value) {
       return "Please select board.";
     }
-    if (boardInput.value === "Other" && (!otherBoardInput.value.trim())) {
-      return "Please specify your board.";
+    if (boardInput.value === "Other" && (!otherBoardInput.value.trim() || otherBoardInput.value.trim().length < 3)) {
+      return "Please specify your board (at least 3 characters).";
     }
-    if (!photoInput.value) {
-      return "Please upload a student photo.";
+    if (!photoInput.value || !isValidImageFile(photoInput)) {
+      return "Please upload a valid student photo (image, max 5MB).";
     }
-    if (parentEmailInput.value && !/^\S+@\S+\.\S+$/.test(parentEmailInput.value)) {
+    if (parentEmailInput.value && !isValidEmail(parentEmailInput.value)) {
       return "Please enter a valid parent/guardian email address.";
     }
-    if (!joiningDateInput.value) {
-      return "Please select joining date.";
+    if (!joiningDateInput.value || !isValidDateTodayOrFuture(joiningDateInput.value)) {
+      return "Please select a valid joining date (today or future).";
     }
     var genderSelected = Array.from(genderInputs).some(radio => radio.checked);
     if (!genderSelected) {
@@ -152,6 +202,108 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Notyf toast setup
   var notyf = window.Notyf ? new Notyf() : null;
+
+  // Live validation helpers
+  let lastLiveError = null;
+  function showLiveError(msg) {
+    if (msg && notyf) {
+      if (lastLiveError !== msg) {
+        notyf.dismissAll();
+        notyf.error(msg);
+        lastLiveError = msg;
+      }
+    } else if (notyf) {
+      notyf.dismissAll();
+      lastLiveError = null;
+    }
+  }
+
+  // Live validation for each field
+  function addLiveValidation() {
+    var studentNameInput = document.getElementById("username");
+    var guardianNameInput = document.getElementById("guardianname");
+    var addressInput = document.getElementById("address");
+    var schoolNameInput = document.getElementById("schoolname");
+    var contactNumberInput = document.getElementById("contactno");
+    var parentContactInput = document.getElementById("parent_contactno");
+    var classInput = document.getElementById("class");
+    var mediumInput = document.getElementById("medium");
+    var boardInput = document.getElementById("board");
+    var otherBoardInput = document.getElementById("otherBoard");
+    var photoInput = document.getElementById("photo");
+    var joiningDateInput = document.querySelector("input[name='date']");
+    var genderInputs = document.querySelectorAll("input[name='gender']");
+    var parentEmailInput = document.getElementById("parent_email");
+    var subjectCheckboxesDiv = document.getElementById("subjectCheckboxes");
+    var subjectCheckboxes = subjectCheckboxesDiv ? subjectCheckboxesDiv.querySelectorAll("input[type='checkbox']") : [];
+
+    if (studentNameInput) studentNameInput.addEventListener("input", function() {
+      showLiveError(!studentNameInput.value.trim() ? "Please enter student name."
+        : (!isAlphaOrSpace(studentNameInput.value) ? "Student name should only contain letters and spaces." : null));
+    });
+    if (guardianNameInput) guardianNameInput.addEventListener("input", function() {
+      showLiveError(!guardianNameInput.value.trim() ? "Please enter parent/guardian's name."
+        : (!isAlphaOrSpace(guardianNameInput.value) ? "Parent/Guardian's name should only contain letters and spaces." : null));
+    });
+    if (addressInput) addressInput.addEventListener("input", function() {
+      showLiveError(!addressInput.value.trim() || !isValidAddress(addressInput.value) ? "Please enter a valid address (at least 10 characters)." : null);
+    });
+    if (schoolNameInput) schoolNameInput.addEventListener("input", function() {
+      showLiveError(!schoolNameInput.value.trim() || !isValidSchoolName(schoolNameInput.value) ? "Please enter a valid school/college name (at least 3 characters)." : null);
+    });
+    if (contactNumberInput) contactNumberInput.addEventListener("input", function() {
+      showLiveError(!contactNumberInput.value.trim() || !isValidIndianMobile(contactNumberInput.value.trim()) ? "Please enter a valid Indian student contact number (e.g. +91 9876543210, 9876543210, 09876543210)." : null);
+    });
+    if (parentContactInput) parentContactInput.addEventListener("input", function() {
+      showLiveError(!parentContactInput.value.trim() || !isValidIndianMobile(parentContactInput.value.trim()) ? "Please enter a valid Indian parent/guardian contact number (e.g. +91 9876543210, 9876543210, 09876543210)." : null);
+    });
+    if (classInput) classInput.addEventListener("change", function() {
+      showLiveError(!classInput.value ? "Please select class/course." : null);
+    });
+    if (mediumInput) mediumInput.addEventListener("change", function() {
+      showLiveError(!mediumInput.value ? "Please select medium of instruction." : null);
+    });
+    if (boardInput) boardInput.addEventListener("change", function() {
+      showLiveError(!boardInput.value ? "Please select board."
+        : (boardInput.value === "Other" && (!otherBoardInput.value.trim() || otherBoardInput.value.trim().length < 3) ? "Please specify your board (at least 3 characters)." : null));
+    });
+    if (otherBoardInput) otherBoardInput.addEventListener("input", function() {
+      if (boardInput.value === "Other") {
+        showLiveError(!otherBoardInput.value.trim() || otherBoardInput.value.trim().length < 3 ? "Please specify your board (at least 3 characters)." : null);
+      } else {
+        showLiveError(null);
+      }
+    });
+    if (photoInput) photoInput.addEventListener("change", function() {
+      showLiveError(!photoInput.value || !isValidImageFile(photoInput) ? "Please upload a valid student photo (image, max 5MB)." : null);
+    });
+    if (joiningDateInput) joiningDateInput.addEventListener("change", function() {
+      showLiveError(!joiningDateInput.value || !isValidDateTodayOrFuture(joiningDateInput.value) ? "Please select a valid joining date (today or future)." : null);
+    });
+    if (parentEmailInput) parentEmailInput.addEventListener("input", function() {
+      showLiveError(parentEmailInput.value && !isValidEmail(parentEmailInput.value) ? "Please enter a valid parent/guardian email address." : null);
+    });
+    if (genderInputs.length) {
+      genderInputs.forEach(function(radio) {
+        radio.addEventListener("change", function() {
+          var genderSelected = Array.from(genderInputs).some(r => r.checked);
+          showLiveError(!genderSelected ? "Please select gender." : null);
+        });
+      });
+    }
+    if (subjectCheckboxes.length) {
+      subjectCheckboxes.forEach(function(cb) {
+        cb.addEventListener("change", function() {
+          if (subjectCheckboxesDiv && subjectCheckboxesDiv.style.display !== "none") {
+            var checked = Array.from(subjectCheckboxes).some(c => c.checked);
+            showLiveError(!checked ? "Please select at least one subject." : null);
+          } else {
+            showLiveError(null);
+          }
+        });
+      });
+    }
+  }
 
   var form = document.getElementById("registration-form");
   if (form) {
@@ -170,9 +322,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
-  document.querySelector("[name='reset']").addEventListener("click", function () {
+  
+    document.querySelector("[name='reset']").addEventListener("click", function () {
     form.reset();
     toggleSubjectCheckboxes();
   });
-});
+  addLiveValidation();
+  });
