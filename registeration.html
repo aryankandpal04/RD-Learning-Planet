@@ -69,24 +69,35 @@
           <input type="tel" name="contactno" id="contactno" pattern="[0-9]{10}" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="10-digit mobile number" />
         </div>
         <div>
-          <label for="class" class="block mb-1 font-semibold text-sm md:text-base">Class</label>
+          <label for="class" class="block mb-1 font-semibold text-sm md:text-base">Class/Course<span class="text-red-500">*</span></label>
           <select name="class" id="class" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
-            <option value="" selected disabled>Select Class</option>
-            <option value="5th">5th</option>
-            <option value="6th">6th</option>
-            <option value="7th">7th</option>
-            <option value="8th">8th</option>
-            <option value="9th">9th</option>
-            <option value="10th">10th</option>
-            <option value="11th">11th</option>
-            <option value="12th">12th</option>
+            <option value="" selected disabled>Select Class/Course</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="BCA/BSc mathematics">BCA/BSc mathematics</option>
+            <option value="BSc CS/IT">BSc CS/IT</option>
+            <option value="BBA">BBA</option>
+            <option value="B.Pharma">B.Pharma</option>
           </select>
         </div>
         <div class="checkboxes" id="subjectCheckboxes" style="display: none">
-          <label id="mathLabel" style="display: none"><input type="checkbox" name="math" value="math" class="mr-2" /> Mathematics</label>
+          <label id="allSubjectsLabel" style="display: none"><input type="checkbox" name="all_subjects" value="All Subjects" class="mr-2" /> All Subjects</label>
+          <label id="mathLabel" style="display: none"><input type="checkbox" name="math" value="Maths" class="mr-2" /> Maths</label>
+          <label id="scienceLabel" style="display: none"><input type="checkbox" name="science" value="Science" class="mr-2" /> Science</label>
           <label id="physicsLabel" style="display: none"><input type="checkbox" name="physics" value="Physics" class="mr-2" /> Physics</label>
-          <label id="chemistryLabel" style="display: none"><input type="checkbox" name="chemistry" value="chemistry" class="mr-2" /> Chemistry</label>
-          <label id="scienceLabel" style="display: none"><input type="checkbox" name="science" value="science" class="mr-2" /> Science</label>
+          <label id="chemistryLabel" style="display: none"><input type="checkbox" name="chemistry" value="Chemistry" class="mr-2" /> Chemistry</label>
+          <label id="bioLabel" style="display: none"><input type="checkbox" name="biology" value="Biology" class="mr-2" /> Biology</label>
+          <label id="economicsLabel" style="display: none"><input type="checkbox" name="economics" value="Economics" class="mr-2" /> Economics</label>
         </div>
         <div id="otherSection" style="display: none">
           <label class="block mb-2"><input type="checkbox" id="sainikCheckbox" name="sainik" value="sainik" class="mr-2" /> Preparation for Sainik School Exam</label>
@@ -102,20 +113,6 @@
             <label class="inline-flex items-center"><input type="radio" id="male" name="gender" value="male" class="mr-2" /> Male</label>
             <label class="inline-flex items-center"><input type="radio" id="female" name="gender" value="female" class="mr-2" /> Female</label>
           </div>
-        </div>
-        <div>
-          <label for="course" class="block mb-1 font-semibold text-sm md:text-base">Course/Stream Selection<span class="text-red-500">*</span></label>
-          <select name="course" id="course" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
-            <option value="" selected disabled>Select Course/Stream</option>
-            <option value="Class 1-5">Class 1–5 (All Subjects)</option>
-            <option value="Class 6-8">Class 6–8 (All Subjects, Science)</option>
-            <option value="Class 9-10">Class 9–10 (Maths, Science)</option>
-            <option value="Class 11-12">Class 11–12 (Physics, Chemistry, Biology, Maths)</option>
-            <option value="BCA">BCA</option>
-            <option value="BSc IT/CS">B.Sc IT/CS</option>
-            <option value="BBA">BBA</option>
-            <option value="Entrance Exams">Entrance Exams (Sainik School, Navodaya, Pantnagar)</option>
-          </select>
         </div>
         <div>
           <label for="medium" class="block mb-1 font-semibold text-sm md:text-base">Medium of Instruction<span class="text-red-500">*</span></label>

@@ -1,39 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
   function toggleSubjectCheckboxes() {
     var classSelect = document.getElementById("class");
+    if (!classSelect) return;
     var selectedClass = classSelect.options[classSelect.selectedIndex].value;
     var checkboxesDiv = document.getElementById("subjectCheckboxes");
     var mathLabel = document.getElementById("mathLabel");
     var physicsLabel = document.getElementById("physicsLabel");
     var chemistryLabel = document.getElementById("chemistryLabel");
     var scienceLabel = document.getElementById("scienceLabel");
-    var otherSection = document.getElementById("otherSection");
+    var bioLabel = document.getElementById("bioLabel");
+    var economicsLabel = document.getElementById("economicsLabel");
+    var allSubjectsLabel = document.getElementById("allSubjectsLabel");
 
-    if (selectedClass === "9th" || selectedClass === "10th") {
+    // Hide all by default
+    [mathLabel, physicsLabel, chemistryLabel, scienceLabel, bioLabel, economicsLabel, allSubjectsLabel].forEach(function(label) {
+      if (label) label.style.display = "none";
+    });
+    checkboxesDiv.style.display = "none";
+
+    // Show relevant checkboxes based on class
+    if (selectedClass === "Class 1-5") {
       checkboxesDiv.style.display = "block";
-      mathLabel.style.display = "block";
-      scienceLabel.style.display = "block";
-      physicsLabel.style.display = "none";
-      chemistryLabel.style.display = "none";
-      otherSection.style.display = "none";
-    } else if (selectedClass === "11th" || selectedClass === "12th") {
+      if (allSubjectsLabel) allSubjectsLabel.style.display = "block";
+      if (mathLabel) mathLabel.style.display = "block";
+      if (scienceLabel) scienceLabel.style.display = "block";
+    } else if (selectedClass === "Class 6-8") {
       checkboxesDiv.style.display = "block";
-      mathLabel.style.display = "block";
-      physicsLabel.style.display = "block";
-      chemistryLabel.style.display = "block";
-      scienceLabel.style.display = "none";
-      otherSection.style.display = "none";
-    } else if (selectedClass === "5th" || selectedClass === "8th") {
-      checkboxesDiv.style.display = "none";
-      otherSection.style.display = "block";
-    } else {
-      checkboxesDiv.style.display = "none";
-      otherSection.style.display = "none";
+      if (allSubjectsLabel) allSubjectsLabel.style.display = "block";
+      if (scienceLabel) scienceLabel.style.display = "block";
+      if (mathLabel) mathLabel.style.display = "block";
+    } else if (selectedClass === "Class 9-10") {
+      checkboxesDiv.style.display = "block";
+      if (mathLabel) mathLabel.style.display = "block";
+      if (scienceLabel) scienceLabel.style.display = "block";
+    } else if (selectedClass === "Class 11-12") {
+      checkboxesDiv.style.display = "block";
+      if (physicsLabel) physicsLabel.style.display = "block";
+      if (chemistryLabel) chemistryLabel.style.display = "block";
+      if (bioLabel) bioLabel.style.display = "block";
+      if (mathLabel) mathLabel.style.display = "block";
+      if (economicsLabel) economicsLabel.style.display = "block";
     }
   }
 
-  document.getElementById("class").addEventListener("change", toggleSubjectCheckboxes);
-  toggleSubjectCheckboxes();
+  var classSelect = document.getElementById("class");
+  if (classSelect) {
+    classSelect.addEventListener("change", toggleSubjectCheckboxes);
+    toggleSubjectCheckboxes();
+  }
 
   function validateForm() {
     var studentNameInput = document.getElementById("username");
