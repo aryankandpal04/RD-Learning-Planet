@@ -214,26 +214,71 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-center py-3 md:py-4 rounded-b-xl mt-8">
-        <div class="mb-2">
-            <p class="text-gray-400 text-xs md:text-sm">Address: GOPIPURAM GALI NO. 2, NEAR RAILWAY CROSSING, HALDUCHAUR
-            </p>
-            <p class="text-gray-400 text-xs md:text-sm">Mobile Numbers: <span>8938848457</span>, <span>8865811157</span>
-            </p>
+    <footer class="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black text-white font-poppins py-6 px-4 mt-8 relative overflow-hidden border-t border-[#1e293b]">
+      <div id="footer-particles" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></div>
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
+        <div class="flex items-center gap-2">
+          <img src="assets/images/logo.jpg" alt="RD Learning Planet Logo" class="h-8 w-8 rounded-full hidden md:block">
+          <span class="text-lg font-semibold">RD Learning Planet</span>
         </div>
-        <div class="mb-2">
-            <p class="text-gray-400 text-xs md:text-sm">Follow Us:</p>
-            <a href="#"><img src="assets/images/facebook_icon.jpeg" alt="Facebook"
-                    class="inline-block w-8 h-8 mx-1 rounded-full" /></a>
-            <a href="https://whatsapp.com/channel/0029Va5QZKMId7nUBLiLvZ0g"><img src="assets/images/whatsapp_icon.jpeg"
-                    alt="Whatsapp" class="inline-block w-8 h-8 mx-1 rounded-full" /></a>
-            <a href="https://www.instagram.com/d.pandey8938?igsh=dzdhYWFqMTJuY3F1"><img
-                    src="assets/images/instagram_icon.jpeg" alt="Instagram"
-                    class="inline-block w-8 h-8 mx-1 rounded-full" /></a>
+        <nav class="flex gap-4 text-sm">
+          <a href="index.html" class="hover:text-[#22d3ee] transition">Home</a>
+          <a href="about.html" class="hover:text-[#22d3ee] transition">About</a>
+          <a href="courses.html" class="hover:text-[#22d3ee] transition">Courses</a>
+          <a href="stationary.html" class="hover:text-[#22d3ee] transition">Stationary</a>
+          <a href="contact.html" class="hover:text-[#22d3ee] transition">Contact</a>
+        </nav>
+        <div class="text-xs text-center md:text-right">
+          <div>📞 8938848457 | <a href="mailto:rdlearningplanet@gmail.com" class="hover:text-[#f97316]">rdlearningplanet@gmail.com</a></div>
+          <div>Center 1: Gopipuram Colony, Halduchaur, Haldwani</div>
+          <div>Center 2: Near Railway Crossing, Halduchaur, Haldwani</div>
+          <div class="mt-1">&copy; <span id="year"></span> RD Learning Planet. All rights reserved.</div>
         </div>
-        <p class="text-gray-400 text-xs md:text-sm">&copy; 2024 rdlearningplanet. All rights reserved.</p>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      if (window.particlesJS) {
+        particlesJS('footer-particles', {
+          particles: {
+            number: { value: 40, density: { enable: true, value_area: 800 } },
+            color: { value: ['#22d3ee', '#f97316', '#fff', '#1e293b'] },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5, random: true },
+            size: { value: 3, random: true },
+            line_linked: {
+              enable: true,
+              distance: 120,
+              color: '#22d3ee',
+              opacity: 0.3,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 1.2,
+              direction: 'none',
+              random: true,
+              straight: false,
+              out_mode: 'out',
+              bounce: false
+            }
+          },
+          interactivity: {
+            detect_on: 'canvas',
+            events: {
+              onhover: { enable: true, mode: 'repulse' },
+              onclick: { enable: false },
+              resize: true
+            },
+            modes: {
+              repulse: { distance: 80, duration: 0.4 }
+            }
+          },
+          retina_detect: true
+        });
+      }
+    </script>
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
