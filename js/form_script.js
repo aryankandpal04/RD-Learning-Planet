@@ -83,40 +83,69 @@ document.addEventListener("DOMContentLoaded", function () {
     var studentNameInput = document.getElementById("username");
     var guardianNameInput = document.getElementById("guardianname");
     var addressInput = document.getElementById("address");
+    var schoolNameInput = document.getElementById("schoolname");
     var contactNumberInput = document.getElementById("contactno");
     var parentContactInput = document.getElementById("parent_contactno");
-    var boardSelect = document.getElementById("board");
+    var classInput = document.getElementById("class");
+    var mediumInput = document.getElementById("medium");
+    var boardInput = document.getElementById("board");
     var otherBoardInput = document.getElementById("otherBoard");
-    var otherBoardDiv = document.getElementById("otherBoardDiv");
+    var photoInput = document.getElementById("photo");
+    var joiningDateInput = document.querySelector("input[name='date']");
+    var genderInputs = document.querySelectorAll("input[name='gender']");
+    var parentEmailInput = document.getElementById("parent_email");
     var subjectCheckboxesDiv = document.getElementById("subjectCheckboxes");
-    var subjectCheckboxes = subjectCheckboxesDiv ? subjectCheckboxesDiv.querySelectorAll('input[type="checkbox"]') : [];
+    var subjectCheckboxes = subjectCheckboxesDiv ? subjectCheckboxesDiv.querySelectorAll("input[type='checkbox']") : [];
 
-    if (studentNameInput.value.trim() === "") {
+    if (!studentNameInput.value.trim()) {
       return "Please enter student name.";
     }
-    if (guardianNameInput.value.trim() === "") {
+    if (!guardianNameInput.value.trim()) {
       return "Please enter parent/guardian's name.";
     }
-    if (addressInput.value.trim() === "") {
+    if (!addressInput.value.trim()) {
       return "Please enter address.";
     }
-    if (contactNumberInput.value.trim() === "" || !/^\d{10}$/.test(contactNumberInput.value.trim())) {
+    if (!schoolNameInput.value.trim()) {
+      return "Please enter school/college name.";
+    }
+    if (!contactNumberInput.value.trim() || !/^\d{10}$/.test(contactNumberInput.value.trim())) {
       return "Please enter a valid 10-digit student contact number.";
     }
-    if (parentContactInput.value.trim() === "" || !/^\d{10}$/.test(parentContactInput.value.trim())) {
+    if (!parentContactInput.value.trim() || !/^\d{10}$/.test(parentContactInput.value.trim())) {
       return "Please enter a valid 10-digit parent/guardian contact number.";
     }
-    if (boardSelect.value === "Other") {
-      if (!otherBoardInput.value.trim()) {
-        return "Please specify your board.";
-      }
+    if (!classInput.value) {
+      return "Please select class/course.";
     }
+    // Subject validation: at least one subject if visible
     if (subjectCheckboxesDiv && subjectCheckboxesDiv.style.display !== "none") {
-      var checked = false;
-      subjectCheckboxes.forEach(function(cb) { if (cb.checked) checked = true; });
+      var checked = Array.from(subjectCheckboxes).some(cb => cb.checked);
       if (!checked) {
         return "Please select at least one subject.";
       }
+    }
+    if (!mediumInput.value) {
+      return "Please select medium of instruction.";
+    }
+    if (!boardInput.value) {
+      return "Please select board.";
+    }
+    if (boardInput.value === "Other" && (!otherBoardInput.value.trim())) {
+      return "Please specify your board.";
+    }
+    if (!photoInput.value) {
+      return "Please upload a student photo.";
+    }
+    if (parentEmailInput.value && !/^\S+@\S+\.\S+$/.test(parentEmailInput.value)) {
+      return "Please enter a valid parent/guardian email address.";
+    }
+    if (!joiningDateInput.value) {
+      return "Please select joining date.";
+    }
+    var genderSelected = Array.from(genderInputs).some(radio => radio.checked);
+    if (!genderSelected) {
+      return "Please select gender.";
     }
     return null;
   }
