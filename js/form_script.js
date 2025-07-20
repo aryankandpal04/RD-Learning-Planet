@@ -84,18 +84,39 @@ document.addEventListener("DOMContentLoaded", function () {
     var guardianNameInput = document.getElementById("guardianname");
     var addressInput = document.getElementById("address");
     var contactNumberInput = document.getElementById("contactno");
+    var parentContactInput = document.getElementById("parent_contactno");
+    var boardSelect = document.getElementById("board");
+    var otherBoardInput = document.getElementById("otherBoard");
+    var otherBoardDiv = document.getElementById("otherBoardDiv");
+    var subjectCheckboxesDiv = document.getElementById("subjectCheckboxes");
+    var subjectCheckboxes = subjectCheckboxesDiv ? subjectCheckboxesDiv.querySelectorAll('input[type="checkbox"]') : [];
 
     if (studentNameInput.value.trim() === "") {
       return "Please enter student name.";
     }
     if (guardianNameInput.value.trim() === "") {
-      return "Please enter guardian's name.";
+      return "Please enter parent/guardian's name.";
     }
     if (addressInput.value.trim() === "") {
       return "Please enter address.";
     }
-    if (contactNumberInput.value.trim() === "") {
-      return "Please enter contact number.";
+    if (contactNumberInput.value.trim() === "" || !/^\d{10}$/.test(contactNumberInput.value.trim())) {
+      return "Please enter a valid 10-digit student contact number.";
+    }
+    if (parentContactInput.value.trim() === "" || !/^\d{10}$/.test(parentContactInput.value.trim())) {
+      return "Please enter a valid 10-digit parent/guardian contact number.";
+    }
+    if (boardSelect.value === "Other") {
+      if (!otherBoardInput.value.trim()) {
+        return "Please specify your board.";
+      }
+    }
+    if (subjectCheckboxesDiv && subjectCheckboxesDiv.style.display !== "none") {
+      var checked = false;
+      subjectCheckboxes.forEach(function(cb) { if (cb.checked) checked = true; });
+      if (!checked) {
+        return "Please select at least one subject.";
+      }
     }
     return null;
   }
