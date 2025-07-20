@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration – RD Learning Planet</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Animate.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <!-- Notyf CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style_form.css">
+  <style>body { font-family: 'Poppins', sans-serif; }</style>
+</head>
+
+<body class="bg-[#0f172a] text-white overflow-x-hidden">
+  <!-- Back Button -->
+  <div class="max-w-md md:max-w-3xl mx-auto mt-6 mb-2 px-4">
+    <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 bg-orange-400 hover:bg-orange-500 text-[#0f172a] font-bold rounded-full shadow focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all duration-300" aria-label="Back to Home">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      Back
+    </a>
+  </div>
+
+  <!-- Hero Banner -->
+  <section class="flex flex-col items-center justify-center py-8 px-4 md:py-16 md:px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b] mb-6 md:mb-12" id="hero">
+    <div class="max-w-md md:max-w-lg w-full flex flex-col items-center">
+      <img src="assets/images/logo.jpg" alt="RD Learning Planet Logo" class="mx-auto w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4 sm:mb-6 rounded-full border-4 border-cyan-300 shadow-lg object-cover animate__animated animate__fadeInDown" />
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-cyan-300 animate__animated animate__fadeInUp text-center">RD LEARNING PLANET</h1>
+      <h3 class="text-orange-400 italic mt-2 animate__animated animate__fadeInUp animate__delay-1s text-center text-sm sm:text-base">(AN INVESTMENT IN KNOWLEDGE PAYS THE BEST INTEREST)</h3>
+    </div>
+  </section>
+
+  <!-- Registration Form Section -->
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up" data-aos-duration="600">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center text-cyan-300 mb-4 md:mb-6">Registration Form</h2>
+      <form id="registration-form" method="post" class="space-y-3 md:space-y-4">
+        <div>
+          <label for="username" class="block mb-1 font-semibold text-sm md:text-base">Student Name</label>
+          <input type="text" name="username" id="username" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Enter student name" />
+        </div>
+        <div>
+          <label for="guardianname" class="block mb-1 font-semibold text-sm md:text-base">Guardian's Name</label>
+          <input type="text" name="guardianname" id="guardianname" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Enter guardian's name" />
+        </div>
+        <div>
+          <label for="address" class="block mb-1 font-semibold text-sm md:text-base">Address</label>
+          <textarea name="address" id="address" rows="3" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Enter address"></textarea>
+        </div>
+        <div>
+          <label for="schoolname" class="block mb-1 font-semibold text-sm md:text-base">School Name</label>
+          <input type="text" name="schoolname" id="schoolname" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Enter school name" />
+        </div>
+        <div>
+          <label for="contactno" class="block mb-1 font-semibold text-sm md:text-base">Contact Number</label>
+          <input type="tel" name="contactno" id="contactno" pattern="[0-9]{10}" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="10-digit mobile number" />
+        </div>
+        <div>
+          <label for="class" class="block mb-1 font-semibold text-sm md:text-base">Class</label>
+          <select name="class" id="class" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <option value="" selected disabled>Select Class</option>
+            <option value="5th">5th</option>
+            <option value="6th">6th</option>
+            <option value="7th">7th</option>
+            <option value="8th">8th</option>
+            <option value="9th">9th</option>
+            <option value="10th">10th</option>
+            <option value="11th">11th</option>
+            <option value="12th">12th</option>
+          </select>
+        </div>
+        <div class="checkboxes" id="subjectCheckboxes" style="display: none">
+          <label id="mathLabel" style="display: none"><input type="checkbox" name="math" value="math" class="mr-2" /> Mathematics</label>
+          <label id="physicsLabel" style="display: none"><input type="checkbox" name="physics" value="Physics" class="mr-2" /> Physics</label>
+          <label id="chemistryLabel" style="display: none"><input type="checkbox" name="chemistry" value="chemistry" class="mr-2" /> Chemistry</label>
+          <label id="scienceLabel" style="display: none"><input type="checkbox" name="science" value="science" class="mr-2" /> Science</label>
+        </div>
+        <div id="otherSection" style="display: none">
+          <label class="block mb-2"><input type="checkbox" id="sainikCheckbox" name="sainik" value="sainik" class="mr-2" /> Preparation for Sainik School Exam</label>
+          <label class="block mb-2"><input type="checkbox" id="navodayaCheckbox" name="navodaya" value="navodaya" class="mr-2" /> Preparation for Navodaya Vidyalaya Exam</label>
+        </div>
+        <div>
+          <label for="date" class="block mb-1 font-semibold text-sm md:text-base">Joining Date</label>
+          <input type="date" name="date" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+        </div>
+        <div>
+          <label class="block mb-1 font-semibold text-sm md:text-base mt-2">Gender</label>
+          <div class="flex items-center gap-6 mt-1">
+            <label class="inline-flex items-center"><input type="radio" id="male" name="gender" value="male" class="mr-2" /> Male</label>
+            <label class="inline-flex items-center"><input type="radio" id="female" name="gender" value="female" class="mr-2" /> Female</label>
+          </div>
+        </div>
+        <div>
+          <label for="course" class="block mb-1 font-semibold text-sm md:text-base">Course/Stream Selection<span class="text-red-500">*</span></label>
+          <select name="course" id="course" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <option value="" selected disabled>Select Course/Stream</option>
+            <option value="Class 1-5">Class 1–5 (All Subjects)</option>
+            <option value="Class 6-8">Class 6–8 (All Subjects, Science)</option>
+            <option value="Class 9-10">Class 9–10 (Maths, Science)</option>
+            <option value="Class 11-12">Class 11–12 (Physics, Chemistry, Biology, Maths)</option>
+            <option value="BCA">BCA</option>
+            <option value="BSc IT/CS">B.Sc IT/CS</option>
+            <option value="BBA">BBA</option>
+            <option value="Entrance Exams">Entrance Exams (Sainik School, Navodaya, Pantnagar)</option>
+          </select>
+        </div>
+        <div>
+          <label for="medium" class="block mb-1 font-semibold text-sm md:text-base">Medium of Instruction<span class="text-red-500">*</span></label>
+          <select name="medium" id="medium" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <option value="" selected disabled>Select Medium</option>
+            <option value="Hindi">Hindi</option>
+            <option value="English">English</option>
+          </select>
+        </div>
+        <div>
+          <label for="board" class="block mb-1 font-semibold text-sm md:text-base">Board<span class="text-red-500">*</span></label>
+          <select name="board" id="board" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <option value="" selected disabled>Select Board</option>
+            <option value="CBSE">CBSE</option>
+            <option value="UK Board">UK Board</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="photo" class="block mb-1 font-semibold text-sm md:text-base">Student Photo Upload<span class="text-red-500">*</span></label>
+          <input type="file" name="photo" id="photo" accept="image/*" required class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white file:bg-cyan-400 file:text-[#0f172a] file:rounded file:font-bold file:px-4 file:py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+        </div>
+        <div>
+          <label for="parent_email" class="block mb-1 font-semibold text-sm md:text-base">Parent/Guardian Email <span class="text-gray-400 text-xs">(Optional)</span></label>
+          <input type="email" name="parent_email" id="parent_email" class="w-full border rounded px-3 py-2 text-sm md:text-base bg-[#0f172a] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Enter parent/guardian email (optional)" />
+        </div>
+        <div class="mt-6 flex gap-4 justify-center">
+          <input type="submit" name="submit" value="Submit" class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded font-bold focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer" />
+          <input type="reset" name="reset" value="Reset" class="bg-cyan-400 hover:bg-cyan-500 text-[#0f172a] py-2 px-6 rounded font-bold focus:outline-none focus:ring-2 focus:ring-cyan-300 transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer" />
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center py-3 md:py-4 rounded-b-xl mt-8">
+    <div class="mb-2">
+      <p class="text-gray-400 text-xs md:text-sm">Address: GOPIPURAM GALI NO. 2, NEAR RAILWAY CROSSING, HALDUCHAUR</p>
+      <p class="text-gray-400 text-xs md:text-sm">Mobile Numbers: <span>8938848457</span>, <span>8865811157</span></p>
+    </div>
+    <div class="mb-2">
+      <p class="text-gray-400 text-xs md:text-sm">Follow Us:</p>
+      <a href="#"><img src="assets/images/facebook_icon.jpeg" alt="Facebook" class="inline-block w-8 h-8 mx-1 rounded-full" /></a>
+      <a href="https://whatsapp.com/channel/0029Va5QZKMId7nUBLiLvZ0g"><img src="assets/images/whatsapp_icon.jpeg" alt="Whatsapp" class="inline-block w-8 h-8 mx-1 rounded-full" /></a>
+      <a href="https://www.instagram.com/d.pandey8938?igsh=dzdhYWFqMTJuY3F1"><img src="assets/images/instagram_icon.jpeg" alt="Instagram" class="inline-block w-8 h-8 mx-1 rounded-full" /></a>
+    </div>
+    <p class="text-gray-400 text-xs md:text-sm">&copy; 2024 rdlearningplanet. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  <script src="js/form_script.js"></script>
+  <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+</body>
+
+</html>

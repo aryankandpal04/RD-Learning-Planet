@@ -1,0 +1,13 @@
+/* style_form.css - minimal overrides for registration form */
+
+/* Hide legacy body and font styles, handled by Tailwind */
+/* .logo, .title, .subtitle styles are now handled by Tailwind utility classes */
+
+/* Only keep custom styles for dynamic checkboxes if needed */
+#subjectCheckboxes label,
+#otherSection label {
+  /* Optionally add spacing if needed */
+  margin-bottom: 0.5rem;
+}
+
+/* Remove all footer and form container styles, now handled by Tailwind */
