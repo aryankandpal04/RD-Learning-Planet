@@ -5,6 +5,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About – RD Learning Planet</title>
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+  <meta name="description"
+    content="Learn about RD Learning Planet's mission to provide quality education. Meet our founder, Mr. Deepak Pandey, and discover our teaching philosophy.">
+  <meta property="og:title" content="About RD Learning Planet | Our Mission and Founder" />
+  <meta property="og:description"
+    content="Learn about RD Learning Planet's mission to provide quality education in Haldwani. Meet our founder, Mr. Deepak Pandey, and discover our teaching philosophy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdlearningplanet.com/about.html" />
+  <meta property="og:image" content="https://rdlearningplanet.com/assets/images/logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About RD Learning Planet | Our Mission and Founder" />
+  <meta name="twitter:description"
+    content="Learn about RD Learning Planet's mission to provide quality education in Haldwani. Meet our founder, Mr. Deepak Pandey, and discover our teaching philosophy." />
+  <meta name="twitter:image" content="https://rdlearningplanet.com/assets/images/logo.jpg" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "RD Learning Planet",
+      "url": "https://rdlearningplanet.com/about.html",
+      "logo": "https://rdlearningplanet.com/assets/images/logo.jpg",
+      "founder": {
+        "@type": "Person",
+        "name": "Mr. Deepak Pandey"
+      },
+      "description": "Empowering students from Class 1 to 12, BCA, B.Sc IT/CS, and competitive exams with quality education, personal attention, and a nurturing environment in Haldwani."
+    }
+  </script>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- AOS CSS -->
@@ -27,7 +55,7 @@
 <body class="bg-[#0f172a] text-white overflow-x-hidden">
 
   <!-- MENU (extra bright active tab with glow) -->
-  <div class="sunburst-menu-container" tabindex="-1" aria-label="Main Navigation">
+  <div class="sunburst-menu-container" tabindex="-1" aria-label="Main Navigation" role="navigation">
     <button class="sunburst-menu-button" id="sunburstMenuBtn" aria-label="Open Menu" tabindex="0">
       <span class="sunburst-menu-label desktop-menu-label">MENU</span>
       <span class="sunburst-menu-label mobile-menu-label" style="display:none;">M<br>E<br>N<br>U</span>
@@ -341,7 +369,7 @@
   <script>AOS.init();</script>
   <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener"
     aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <i class="fab fa-whatsapp" aria-hidden="true" aria-label="WhatsApp"></i>
   </a>
 </body>
 
