@@ -6,34 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration – RD Learning Planet</title>
     <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://rdlearningplanet.netlify.app/registeration.html" />
     <meta name="description"
         content="Register for courses at RD Learning Planet. Fill out the registration form to enroll in our coaching classes for various subjects and competitive exams in Haldwani.">
     <meta property="og:title" content="Registration | RD Learning Planet" />
     <meta property="og:description"
         content="Register for courses at RD Learning Planet. Fill out the registration form to enroll in our coaching classes for various subjects and competitive exams in Haldwani." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rdlearningplanet.com/registeration.html" />
-    <meta property="og:image" content="https://rdlearningplanet.com/assets/images/logo.jpg" />
+    <meta property="og:url" content="https://rdlearningplanet.netlify.app/registeration.html" />
+    <meta property="og:image" content="https://rdlearningplanet.netlify.app/assets/images/logo.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Registration | RD Learning Planet" />
     <meta name="twitter:description"
         content="Register for courses at RD Learning Planet. Fill out the registration form to enroll in our coaching classes for various subjects and competitive exams in Haldwani." />
-    <meta name="twitter:image" content="https://rdlearningplanet.com/assets/images/logo.jpg" />
+    <meta name="twitter:image" content="https://rdlearningplanet.netlify.app/assets/images/logo.jpg" />
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
     <!-- Animate.css -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        media="print" onload="this.media='all'">
     <!-- Notyf CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" media="print"
+        onload="this.media='all'">
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+        media="print" onload="this.media='all'">
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/style_form.css">
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/style_form.css" media="print" onload="this.media='all'">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -294,16 +299,25 @@
       }
     </script>
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>AOS.init();</script>
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <script src="js/form_script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js" defer></script>
+    <script src="js/form_script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"
+        defer></script>
     <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener"
         aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true" aria-label="WhatsApp"></i>
     </a>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'YOUR_TRACKING_ID');
+    </script>
 </body>
 
 </html>

@@ -6,25 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact – RD Learning Planet</title>
   <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://rdlearningplanet.netlify.app/contact.html" />
   <meta name="description"
     content="Contact RD Learning Planet in Haldwani for coaching inquiries. Find our address, phone number, email, and a map to our centers.">
   <meta property="og:title" content="Contact RD Learning Planet | Address, Phone, and Map" />
   <meta property="og:description"
     content="Contact RD Learning Planet in Haldwani for coaching inquiries. Find our address, phone number, email, and a map to our centers." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rdlearningplanet.com/contact.html" />
-  <meta property="og:image" content="https://rdlearningplanet.com/assets/images/logo.jpg" />
+  <meta property="og:url" content="https://rdlearningplanet.netlify.app/contact.html" />
+  <meta property="og:image" content="https://rdlearningplanet.netlify.app/assets/images/logo.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact RD Learning Planet | Address, Phone, and Map" />
   <meta name="twitter:description"
     content="Contact RD Learning Planet in Haldwani for coaching inquiries. Find our address, phone number, email, and a map to our centers." />
-  <meta name="twitter:image" content="https://rdlearningplanet.com/assets/images/logo.jpg" />
+  <meta name="twitter:image" content="https://rdlearningplanet.netlify.app/assets/images/logo.jpg" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "RD Learning Planet",
-      "image": "https://rdlearningplanet.com/assets/images/logo.jpg",
+      "image": "https://rdlearningplanet.netlify.app/assets/images/logo.jpg",
       "telephone": "+918938848457",
       "email": "rdlearningplanet@gmail.com",
       "address": {
@@ -35,21 +36,24 @@
         "postalCode": "263139",
         "addressCountry": "IN"
       },
-      "url": "https://rdlearningplanet.com/contact.html"
+      "url": "https://rdlearningplanet.netlify.app/contact.html"
     }
   </script>
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
   <!-- Notyf CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" media="print"
+    onload="this.media='all'">
   <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    media="print" onload="this.media='all'">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    media="print" onload="this.media='all'">
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -87,7 +91,7 @@
       tabindex="-1"><span class="icon text-cyan-300 hover:text-cyan-400">⚙️</span><span
         class="label">Settings</span></a>
   </div>
-  <script src="js/menu.js"></script>
+  <script src="js/menu.js" defer></script>
 
   <!-- Hero Banner -->
   <section
@@ -112,7 +116,7 @@
       <div class="space-y-3 text-base md:text-lg">
         <p><i class="fa-solid fa-location-dot text-orange-400 mr-2"></i><span class="font-semibold">Address:</span> GOPIPURAM GALI NO. 2, NEAR RAILWAY CROSSING, HALDUCHAUR, Uttarakhand, India, 263139</p>
         <p><i class="fa-solid fa-phone text-cyan-400 mr-2"></i><span class="font-semibold">Phone:</span> <a href="tel:8938848457" class="hover:underline text-cyan-300">8938848457</a>, <a href="tel:8865811157" class="hover:underline text-cyan-300">8865811157</a></p>
-        <p><i class="fa-solid fa-envelope text-orange-400 mr-2"></i><span class="font-semibold">Email:</span> <a href="mailto:rdlearningplanet@gmail.com" class="hover:underline text-orange-300">rdlearningplanet@gmail.com</a></p>
+        <p><i class="fa-solid fa-envelope text-orange-400 mr-2"></i><span class="font-semibold">Email:</span> <a href="mailto:rdlearningplanet@gmail.com" class="hover:underline text-orange-300" id="email-link"></a></p>
         <p><i class="fa-solid fa-clock text-cyan-400 mr-2"></i><span class="font-semibold">Office Hours:</span> Monday to Saturday, 9:00 AM – 7:00 PM</p>
       </div>
     </div>
@@ -206,15 +210,23 @@
         <a href="contact.html" class="hover:text-[#22d3ee] transition">Contact</a>
       </nav>
       <div class="text-xs text-center md:text-right">
-        <div>📞 8938848457 | <a href="mailto:rdlearningplanet@gmail.com" class="hover:text-[#f97316]">rdlearningplanet@gmail.com</a></div>
+        <div>📞 8938848457 | <a href="mailto:rdlearningplanet@gmail.com" class="hover:text-[#f97316]" id="footer-email-link"></a></div>
         <div>Center 1: Gopipuram Colony, Halduchaur, Haldwani</div>
         <div>Center 2: Near Railway Crossing, Halduchaur, Haldwani</div>
         <div class="mt-1">&copy; <span id="year"></span> RD Learning Planet. All rights reserved.</div>
       </div>
     </div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();
+      const emailLink = document.getElementById('email-link');
+      const footerEmailLink = document.getElementById('footer-email-link');
+      const email = 'rdlearningplanet@gmail.com';
+      emailLink.href = 'mailto:' + email;
+      emailLink.textContent = email;
+      footerEmailLink.href = 'mailto:' + email;
+      footerEmailLink.textContent = email;
+    </script>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
   <script>
     if (window.particlesJS) {
       particlesJS('footer-particles', {
@@ -257,22 +269,32 @@
     }
   </script>
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script>AOS.init();</script>
-  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js" defer></script>
   <script>
     const form = document.getElementById('contact-form');
-    const notyf = new Notyf();
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      notyf.success('Your message has been sent!');
-      form.reset();
-    });
+    if (form) {
+      const notyf = new Notyf();
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        notyf.success('Your message has been sent!');
+        form.reset();
+      });
+    }
   </script>
   <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener"
     aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true" aria-label="WhatsApp"></i>
   </a>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'YOUR_TRACKING_ID');
+  </script>
 </body>
 
 </html>

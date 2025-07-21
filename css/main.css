@@ -11,14 +11,12 @@ body {
   padding: 0;
   background: #0f172a;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
   width: 100vw;
   overflow-x: hidden;
 }
 
 body {
-  min-height: 100vh;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
 }
 
 section,

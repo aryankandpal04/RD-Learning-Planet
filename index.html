@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RD Learning Planet | Quality Coaching in Haldwani</title>
   <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://rdlearningplanet.netlify.app/index.html" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,7 +27,7 @@
   <meta property="og:description"
     content="Coaching for Classes 1–12, BCA, B.Sc IT/CS, Entrance Exams. Quality teaching, affordable fees, and personal attention." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rdlearningplanet.com/" />
+  <meta property="og:url" content="https://rdlearningplanet.netlify.app/" />
   <meta property="og:image" content="assets/images/logo.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="RD Learning Planet – Coaching & Success" />
@@ -38,7 +39,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "RD Learning Planet",
-      "image": "https://rdlearningplanet.com/assets/images/logo.jpg",
+      "image": "https://rdlearningplanet.netlify.app/assets/images/logo.jpg",
       "telephone": "+918938848457",
       "address": {
         "@type": "PostalAddress",
@@ -48,7 +49,7 @@
         "postalCode": "263139",
         "addressCountry": "IN"
       },
-      "url": "https://rdlearningplanet.com/",
+      "url": "https://rdlearningplanet.netlify.app/",
       "description": "Coaching for Classes 1–12, BCA, B.Sc IT/CS, Entrance Exams. Quality teaching, affordable fees, and personal attention."
     }
   </script>
@@ -369,8 +370,27 @@
     </div>
   </section>
 
+  <!-- Social Sharing Section -->
+  <section class="py-6 px-4 md:py-10 md:px-4 max-w-md md:max-w-3xl mx-auto mb-6 md:mb-12" data-aos="fade-up">
+    <div class="bg-[#1e293b] text-white rounded-xl shadow-lg p-4 md:p-8 text-center">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-orange-400 mb-4">Share Us</h2>
+      <div class="flex justify-center gap-6">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://rdlearningplanet.netlify.app" target="_blank" rel="noopener" class="rounded-full w-12 h-12 flex items-center justify-center bg-[#1877f3] hover:scale-110 transition shadow-lg" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-f text-white text-2xl"></i>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://rdlearningplanet.netlify.app&text=Check%20out%20RD%20Learning%20Planet" target="_blank" rel="noopener" class="rounded-full w-12 h-12 flex items-center justify-center bg-[#1da1f2] hover:scale-110 transition shadow-lg" aria-label="Share on Twitter">
+          <i class="fab fa-twitter text-white text-2xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rdlearningplanet.netlify.app&title=RD%20Learning%20Planet" target="_blank" rel="noopener" class="rounded-full w-12 h-12 flex items-center justify-center bg-[#0077b5] hover:scale-110 transition shadow-lg" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin-in text-white text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer class="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black text-white font-poppins py-6 px-4 mt-8 relative overflow-hidden border-t border-[#1e293b]">
+  <footer
+    class="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-black text-white font-poppins py-6 px-4 mt-8 relative overflow-hidden border-t border-[#1e293b]">
     <div id="footer-particles" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></div>
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
       <div class="flex items-center gap-2">
@@ -385,13 +405,18 @@
         <a href="contact.html" class="hover:text-[#22d3ee] transition">Contact</a>
       </nav>
       <div class="text-xs text-center md:text-right">
-        <div>📞 8938848457 | <a href="mailto:rdlearningplanet@gmail.com" class="hover:text-[#f97316]">rdlearningplanet@gmail.com</a></div>
+        <div>📞 8938848457 | <a href="mailto:rdlearningplanet@gmail.com" class="hover:text-[#f97316]" id="email-link"></a></div>
         <div>Center 1: Gopipuram Colony, Halduchaur, Haldwani</div>
         <div>Center 2: Near Railway Crossing, Halduchaur, Haldwani</div>
         <div class="mt-1">&copy; <span id="year"></span> RD Learning Planet. All rights reserved.</div>
       </div>
     </div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();
+      const emailLink = document.getElementById('email-link');
+      const email = 'rdlearningplanet@gmail.com';
+      emailLink.href = 'mailto:' + email;
+      emailLink.textContent = email;
+    </script>
   </footer>
   <script>
     if (window.particlesJS) {
@@ -444,12 +469,14 @@
   <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
   <script>
     const form = document.getElementById('contact-form');
-    const notyf = new Notyf();
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      notyf.success('Form submitted successfully!');
-      form.reset();
-    });
+    if (form) {
+      const notyf = new Notyf();
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        notyf.success('Form submitted successfully!');
+        form.reset();
+      });
+    }
   </script>
   <script src="js/particles-init.js"></script>
   <script src="js/menu.js"></script>
@@ -458,6 +485,14 @@
     aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true" aria-label="WhatsApp"></i>
   </a>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'YOUR_TRACKING_ID');
+  </script>
 </body>
 
 </html>

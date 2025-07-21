@@ -6,19 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Course – RD Learning Planet</title>
   <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://rdlearningplanet.netlify.app/courses.html" />
   <meta name="description"
     content="Explore the wide range of courses offered at RD Learning Planet, including coaching for classes 1-12, BCA, B.Sc, and entrance exams in Haldwani.">
   <meta property="og:title" content="Courses at RD Learning Planet | Haldwani Coaching Center" />
   <meta property="og:description"
     content="Explore the wide range of courses offered at RD Learning Planet, including coaching for classes 1-12, BCA, B.Sc, and entrance exams in Haldwani." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rdlearningplanet.com/courses.html" />
-  <meta property="og:image" content="https://rdlearningplanet.com/assets/images/logo.jpg" />
+  <meta property="og:url" content="https://rdlearningplanet.netlify.app/courses.html" />
+  <meta property="og:image" content="https://rdlearningplanet.netlify.app/assets/images/logo.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Courses at RD Learning Planet | Haldwani Coaching Center" />
   <meta name="twitter:description"
     content="Explore the wide range of courses offered at RD Learning Planet, including coaching for classes 1-12, BCA, B.Sc, and entrance exams in Haldwani." />
-  <meta name="twitter:image" content="https://rdlearningplanet.com/assets/images/logo.jpg" />
+  <meta name="twitter:image" content="https://rdlearningplanet.netlify.app/assets/images/logo.jpg" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -28,17 +29,20 @@
     }
   </script>
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
   <!-- Notyf CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" media="print"
+    onload="this.media='all'">
   <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    media="print" onload="this.media='all'">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    media="print" onload="this.media='all'">
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -77,7 +81,7 @@
       tabindex="-1"><span class="icon text-cyan-300 hover:text-cyan-400">⚙️</span><span
         class="label">Settings</span></a>
   </div>
-  <script src="js/menu.js"></script>
+  <script src="js/menu.js" defer></script>
   <!-- Hero Banner -->
   <section
     class="flex flex-col items-center justify-center py-8 px-4 md:py-16 md:px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b] mb-6 md:mb-12"
@@ -166,12 +170,20 @@
     }
   </script>
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script>AOS.init();</script>
   <a href="https://wa.me/918938848457" class="whatsapp-float-btn" target="_blank" rel="noopener"
     aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true" aria-label="WhatsApp"></i>
   </a>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'YOUR_TRACKING_ID');
+  </script>
 </body>
 
 </html>
